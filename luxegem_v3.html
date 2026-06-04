@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LuxeGem — Fine Jewellery | Nairobi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap">
+<style>
+/* ── DARK THEME (default) ── */
+:root{
+  --blk:#05040a;--dark:#080610;--d2:#100e1a;--d3:#181525;--d4:#201c2f;
+  --gold:#c8a96e;--gol:#e6cc8e;--god:#8c6e38;--gold2:#f0d898;
+  --rose:#c8556e;--rsl:#e8859e;--rsd:#8c3048;
+  --ink:#1a0e2a;
+  --cream:#f6ede0;--cream2:#e8d8c4;--white:#fff;
+  --txt:#a89890;--dim:#584e60;--bdr:#221c35;
+  --grn:#50c878;--red:#e05050;
+  --r:6px;--rl:12px;--rx:20px;--shadow:0 12px 48px rgba(0,0,0,.7);
+  --T:all .3s cubic-bezier(.4,0,.2,1);--nh:70px;
+  --serif:'Playfair Display',Georgia,serif;--sans:'Jost',sans-serif;
+  --gp:linear-gradient(135deg,#c8556e 0%,#c8a96e 55%,#e6cc8e 100%);
+  --gp2:linear-gradient(135deg,#8c3048 0%,#c8a96e 100%);
+  --gpv:linear-gradient(180deg,#c8556e 0%,#c8a96e 100%);
+}
+
+/* ── LIGHT THEME ── */
+html.light{
+  --blk:#faf7f2;--dark:#f3ede3;--d2:#fffcf8;--d3:#f5efe6;--d4:#eee6da;
+  --rose:#7c2d43;--rsl:#a84d63;--rsd:#4e1529;
+  --gold:#9c6e28;--gol:#b8882e;--god:#6b4a18;--gold2:#c89c3c;
+  --ink:#f0e8da;
+  --cream:#1a0e2a;--cream2:#2d1e3a;--white:#fff;
+  --txt:#5a4858;--dim:#9a8a96;--bdr:#ddd0c8;
+  --grn:#1e7e3e;--red:#c0392b;
+  --shadow:0 8px 32px rgba(100,60,60,.15);
+  --gp:linear-gradient(135deg,#7c2d43 0%,#9c6e28 55%,#b8882e 100%);
+  --gp2:linear-gradient(135deg,#4e1529 0%,#9c6e28 100%);
+  --gpv:linear-gradient(180deg,#7c2d43 0%,#9c6e28 100%);
+}
+html.light body{background:var(--blk);color:var(--txt)}
+html.light .navbar{background:rgba(250,247,242,.97)!important;border-bottom-color:rgba(156,110,40,.2)!important}
+html.light .abar{background:linear-gradient(90deg,#f0e8da,#ede4d4,#f0e8da)!important;color:var(--rose)!important;border-bottom-color:rgba(156,110,40,.2)!important}
+html.light .nsi{color:var(--cream)!important}
+html.light .nsdrop{background:var(--d2)!important;border-color:var(--bdr)!important}
+html.light .cdrawer{background:var(--dark)!important;border-left-color:rgba(156,110,40,.2)!important}
+html.light .cftr{background:var(--d2)!important}
+html.light .mbox{background:var(--d2)!important;border-color:rgba(156,110,40,.3)!important;box-shadow:0 24px 80px rgba(100,60,60,.18)!important}
+html.light .qvbox{background:var(--d2)!important;border-color:rgba(156,110,40,.3)!important}
+html.light .fi{background:var(--d3)!important;border-color:var(--bdr)!important;color:var(--cream)!important}
+html.light .fi::placeholder{color:var(--dim)!important}
+html.light .fi:focus{border-color:rgba(156,110,40,.6)!important}
+html.light .pmth{background:var(--d3)!important;border-color:var(--bdr)!important}
+html.light .pmth.active{background:rgba(156,110,40,.1)!important;border-color:var(--gold)!important}
+html.light .pmnm{color:var(--cream)!important}
+html.light .payinp{background:var(--d3)!important;border-color:var(--bdr)!important}
+html.light .osum{border-color:var(--bdr)!important}
+html.light .cofsec{border-color:var(--bdr)!important}
+html.light .pcard{background:var(--d2)!important}
+html.light .pimgw{background:linear-gradient(135deg,var(--d3),var(--d4))!important}
+html.light .pinfo{background:var(--d2)!important}
+html.light .ccard{background:var(--d2)!important}
+html.light .tcard{background:var(--d2)!important}
+html.light .tcard:hover{background:var(--d3)!important}
+html.light .tgrid{background:rgba(156,110,40,.12)!important}
+html.light .promo{background:linear-gradient(135deg,var(--d2) 0%,rgba(124,45,67,.06) 50%,var(--d3) 100%)!important;border-color:rgba(156,110,40,.2)!important}
+html.light .chip{border-color:var(--bdr)!important;color:var(--dim)!important}
+html.light .chip:hover{border-color:rgba(156,110,40,.5)!important;color:var(--gold)!important}
+html.light .chip.active{border-color:var(--gold)!important;color:var(--gold)!important}
+html.light .ssort{background:var(--d2)!important;border-color:var(--bdr)!important;color:var(--txt)!important}
+html.light .hcirc{background:linear-gradient(135deg,var(--d3),var(--d4))!important;border-color:rgba(156,110,40,.25)!important}
+html.light .hfcard{background:rgba(250,247,242,.96)!important;border-color:rgba(156,110,40,.3)!important}
+html.light .btn-g{background:rgba(0,0,0,.04)!important;border-color:var(--bdr)!important;color:var(--cream)!important}
+html.light .btn-o{border-color:rgba(156,110,40,.6)!important;color:var(--gold)!important}
+html.light .btn-o:hover{background:rgba(156,110,40,.08)!important}
+html.light .gdiv{background:linear-gradient(90deg,transparent,rgba(156,110,40,.25),rgba(124,45,67,.25),rgba(156,110,40,.25),transparent)!important}
+html.light .nlform{border-color:rgba(156,110,40,.3)!important}
+html.light .nlinput{color:var(--cream)!important}
+html.light .footer{background:var(--d3)!important;border-top-color:rgba(156,110,40,.15)!important}
+html.light .fbot{border-top-color:rgba(0,0,0,.06)!important}
+html.light .fpay{border-color:var(--bdr)!important}
+html.light .fstrip{background:linear-gradient(90deg,rgba(156,110,40,.06),rgba(124,45,67,.04),rgba(156,110,40,.06))!important;border-color:rgba(156,110,40,.12)!important}
+html.light #mobnav{background:var(--dark)!important}
+html.light .cithumb{background:var(--d3)!important;border-color:var(--bdr)!important}
+html.light .dimg{background:linear-gradient(135deg,var(--d2),var(--d3))!important;border-color:rgba(156,110,40,.15)!important}
+html.light .dthumb{background:var(--d3)!important;border-color:var(--bdr)!important}
+html.light .dspecs{border-color:var(--bdr)!important}
+html.light .srow{border-bottom-color:rgba(0,0,0,.05)!important}
+html.light .qctrl{border-color:var(--bdr)!important}
+html.light .tritem{border-color:var(--bdr)!important}
+html.light .qvimgs{background:linear-gradient(135deg,var(--d3),var(--d4))!important}
+html.light .qvspecs{background:var(--d3)!important;border-color:rgba(0,0,0,.04)!important}
+html.light .sbtn{border-color:var(--bdr)!important;color:var(--txt)!important}
+html.light .mttab{border-bottom-color:var(--bdr)!important}
+html.light .slogin{border-top-color:var(--bdr)!important}
+html.light .promorow{border-color:var(--bdr)!important}
+html.light .promorow input{color:var(--cream)!important}
+html.light .mpbox{background:var(--d2)!important}
+html.light .ctotrow{border-top-color:var(--bdr)!important}
+html.light .chead{border-bottom-color:var(--bdr)!important}
+html.light .titem{background:var(--d2)!important;color:var(--cream)!important}
+html.light .mclose,.html.light .cclosebtn{border-color:var(--bdr)!important}
+html.light .qvcl{background:rgba(250,247,242,.9)!important;border-color:rgba(156,110,40,.3)!important}
+html.light .hero::before{background:radial-gradient(ellipse 60% 70% at 70% 45%,rgba(124,45,67,.05) 0%,rgba(156,110,40,.04) 50%,transparent 75%)!important}
+html.light #ai-faq-panel{background:var(--d2)!important;border-color:rgba(156,110,40,.3)!important;box-shadow:0 16px 56px rgba(100,60,60,.18)!important}
+html.light #ai-faq-input{background:var(--d3)!important;border-color:var(--bdr)!important;color:var(--cream)!important}
+html.light .faq-msg.ai{background:var(--d3)!important;color:var(--txt)!important}
+html.light ::-webkit-scrollbar-track{background:var(--dark)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--blk);color:var(--txt);font-size:14px;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--sans)}
+img{max-width:100%;display:block;object-fit:cover}
+ul{list-style:none}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--dark)}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--rsd),var(--god));border-radius:2px}
+
+h1,h2,h3,h4{font-family:var(--serif);font-weight:400;line-height:1.15}
+h1{font-size:clamp(2.4rem,5.5vw,4.2rem)}
+h2{font-size:clamp(1.7rem,3vw,2.6rem)}
+h3{font-size:clamp(1.1rem,2vw,1.5rem)}
+.slabel{font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);font-weight:500;font-family:var(--sans)}
+.stitle{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.7rem);color:var(--cream);margin-top:10px}
+.ssub{color:var(--dim);font-size:13px;margin-top:10px;max-width:500px;line-height:1.8;font-weight:300}
+.container{max-width:1380px;margin:0 auto;padding:0 32px}
+.hidden{display:none!important}
+.tc{text-align:center}
+.gdiv{height:1px;background:linear-gradient(90deg,transparent,rgba(200,169,110,.3),rgba(200,85,110,.3),rgba(200,169,110,.3),transparent);margin:56px 0}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 30px;font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;border-radius:2px;transition:var(--T);white-space:nowrap;font-family:var(--sans)}
+.btn-p{background:var(--gp);color:#fff;box-shadow:0 4px 24px rgba(200,85,110,.3)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 10px 36px rgba(200,85,110,.45);filter:brightness(1.05)}
+.btn-o{border:1px solid rgba(200,169,110,.5);color:var(--gold);background:transparent}
+.btn-o:hover{background:rgba(200,169,110,.08);border-color:var(--gold);transform:translateY(-1px)}
+.btn-g{background:rgba(255,255,255,.04);border:1px solid var(--bdr);color:var(--cream)}
+.btn-g:hover{background:rgba(255,255,255,.08);border-color:rgba(200,169,110,.3)}
+.btn-gold{background:linear-gradient(135deg,var(--god),var(--gold),var(--gol));color:var(--blk);font-weight:600}
+.btn-gold:hover{filter:brightness(1.08);transform:translateY(-2px);box-shadow:0 8px 28px rgba(200,169,110,.4)}
+.btn-sm{padding:8px 18px;font-size:10px}
+.btn-lg{padding:16px 48px;font-size:11px}
+.btn-full{width:100%}
+
+/* ANNOUNCE */
+.abar{background:linear-gradient(90deg,var(--ink),#1a0820,var(--ink));color:var(--gold2);text-align:center;padding:10px;font-size:10px;font-weight:400;letter-spacing:.25em;text-transform:uppercase;border-bottom:1px solid rgba(200,169,110,.15)}
+
+/* NAV */
+.navbar{position:sticky;top:0;z-index:1000;background:rgba(5,4,10,.95);backdrop-filter:blur(28px);border-bottom:1px solid rgba(200,169,110,.12);height:var(--nh)}
+.nav-in{display:flex;align-items:center;height:100%;gap:0}
+.nlogo{flex-shrink:0;margin-right:40px;cursor:pointer}
+.nlogo-txt{font-family:var(--serif);font-size:23px;color:var(--cream);letter-spacing:.06em;font-style:italic}
+.nlogo-txt span{background:var(--gp);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:normal}
+.nlinks{display:flex;align-items:center;flex:1}
+.nlink{padding:0 16px;height:var(--nh);display:flex;align-items:center;font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);transition:var(--T);cursor:pointer;position:relative}
+.nlink::after{content:'';position:absolute;bottom:-1px;left:16px;right:16px;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .3s ease}
+.nlink:hover,.nlink.active{color:var(--gold)}
+.nlink:hover::after,.nlink.active::after{transform:scaleX(1)}
+.nright{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.nicoBtn{width:40px;height:40px;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:17px;color:var(--dim);transition:var(--T);position:relative}
+.nicoBtn:hover{color:var(--gold)}
+.nbadge{position:absolute;top:5px;right:4px;background:var(--gp);color:#fff;font-size:8px;font-weight:700;min-width:15px;height:15px;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:0 3px}
+.nsw{flex:1;max-width:260px;position:relative;margin:0 16px}
+.nsi{width:100%;background:transparent;border:none;border-bottom:1px solid var(--bdr);color:var(--cream);padding:8px 14px 8px 36px;font-size:12px;outline:none;transition:border-color .3s;font-family:var(--sans)}
+.nsi:focus{border-bottom-color:rgba(200,169,110,.5)}
+.nsi::placeholder{color:var(--dim);font-size:12px;letter-spacing:.1em}
+.nsi-icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--dim);font-size:13px;pointer-events:none}
+.nsdrop{position:absolute;top:calc(100% + 8px);left:0;right:0;background:var(--d2);border:1px solid var(--bdr);border-radius:var(--rl);max-height:360px;overflow-y:auto;display:none;z-index:500;box-shadow:var(--shadow)}
+.hamburger{display:none;width:40px;height:40px;align-items:center;justify-content:center;color:var(--txt);font-size:20px}
+
+/* PAGE TABS */
+.ptab{display:none}
+.ptab.active{display:block;animation:fadeUp .4s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+/* HERO */
+.hero{min-height:calc(100vh - var(--nh) - 40px);display:grid;grid-template-columns:1.1fr 1fr;align-items:center;gap:60px;padding:80px 0;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 70% 45%,rgba(200,85,110,.07) 0%,rgba(200,169,110,.05) 50%,transparent 75%);pointer-events:none;z-index:1}
+.hero::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(200,169,110,.3),transparent);z-index:1}
+.hero>*{position:relative;z-index:2}
+
+/* Mobile hero background image — hidden on large desktop, visible ≤1200px */
+.hero-mob-bg{display:none;position:absolute;inset:0;z-index:0}
+.hero-mob-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:saturate(0.85) brightness(0.42)}
+.hero-mob-bg::after{content:'';position:absolute;inset:0;background:
+  linear-gradient(180deg,var(--blk) 0%,rgba(5,4,10,.5) 16%,rgba(5,4,10,.28) 42%,rgba(5,4,10,.68) 76%,var(--blk) 100%),
+  linear-gradient(90deg,rgba(5,4,10,.72) 0%,transparent 52%,rgba(5,4,10,.35) 100%),
+  linear-gradient(135deg,rgba(200,85,110,.18) 0%,transparent 55%),
+  radial-gradient(ellipse 70% 50% at 60% 38%,rgba(200,169,110,.10) 0%,transparent 70%);}
+@media(max-width:1200px){.hero-mob-bg{display:block}}
+.hero-ey{display:inline-flex;align-items:center;gap:10px;background:transparent;border:1px solid rgba(200,169,110,.3);padding:7px 18px;border-radius:0;font-size:9px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:30px;font-family:var(--sans)}
+.hero-line{width:24px;height:1px;background:var(--gold);flex-shrink:0}
+.hero h1{color:var(--cream);margin-bottom:24px;font-weight:400}
+.hero h1 em{font-style:italic;background:var(--gp);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-lead{font-size:15px;color:var(--txt);line-height:1.9;margin-bottom:40px;max-width:460px;font-weight:300}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:48px;margin-top:56px;padding-top:36px;border-top:1px solid rgba(200,169,110,.15)}
+.snum{font-family:var(--serif);font-size:32px;color:var(--gold);font-weight:400;font-style:italic}
+.slbl{font-size:9px;color:var(--dim);text-transform:uppercase;letter-spacing:.2em;margin-top:4px;font-weight:400}
+.hvis{position:relative;display:flex;align-items:center;justify-content:center}
+.hcirc{width:min(480px,100%);aspect-ratio:1;border-radius:0;background:linear-gradient(135deg,var(--d3),var(--d4));border:1px solid rgba(200,169,110,.2);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 0 100px rgba(200,85,110,.1),0 0 200px rgba(200,169,110,.06),inset 0 0 80px rgba(0,0,0,.6)}
+.hcirc::before{content:'';position:absolute;inset:0;background:conic-gradient(from 0deg,transparent 0deg,rgba(200,169,110,.08) 90deg,transparent 180deg,rgba(200,85,110,.06) 270deg,transparent 360deg);animation:spin 16s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hcirc-img{width:88%;height:88%;object-fit:cover;position:relative;z-index:1;border:1px solid rgba(200,169,110,.2)}
+.hfcard{position:absolute;background:rgba(8,6,16,.92);border:1px solid rgba(200,169,110,.25);padding:14px 20px;box-shadow:var(--shadow);backdrop-filter:blur(16px);z-index:2}
+.hfcard.tl{top:8%;left:-5%}
+.hfcard.br{bottom:12%;right:-5%}
+.fnum{font-family:var(--serif);font-size:22px;color:var(--gold);font-style:italic}
+.flbl{font-size:9px;color:var(--dim);text-transform:uppercase;letter-spacing:.18em}
+.gpart{position:absolute;border-radius:50%}
+.gpart:nth-child(1){width:60px;height:60px;background:radial-gradient(circle,rgba(200,85,110,.35),transparent);top:6%;right:6%;animation:flt 7s ease-in-out infinite}
+.gpart:nth-child(2){width:40px;height:40px;background:radial-gradient(circle,rgba(200,169,110,.35),transparent);bottom:10%;left:2%;animation:flt 5s ease-in-out 2s infinite}
+.gpart:nth-child(3){width:24px;height:24px;background:radial-gradient(circle,rgba(200,169,110,.4),transparent);top:38%;right:-2%;animation:flt 9s ease-in-out 4s infinite}
+@keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+
+/* FEATURES STRIP */
+.fstrip{background:linear-gradient(90deg,rgba(200,169,110,.04),rgba(200,85,110,.03),rgba(200,169,110,.04));border-top:1px solid rgba(200,169,110,.1);border-bottom:1px solid rgba(200,169,110,.1);padding:30px 0}
+.fgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.fitem{display:flex;align-items:center;gap:16px}
+.ficon{width:50px;height:50px;border:1px solid rgba(200,169,110,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ficon img{width:22px;height:22px;object-fit:contain;filter:brightness(0) invert(1);opacity:.75}
+.ftitle{font-size:12px;font-weight:500;color:var(--cream);letter-spacing:.05em}
+.fdesc{font-size:11px;color:var(--dim);font-weight:300;margin-top:2px}
+
+/* CATEGORIES */
+.csec{padding:70px 0}
+.cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:40px}
+.ccard{position:relative;aspect-ratio:4/3;overflow:hidden;cursor:pointer;transition:var(--T);background:var(--d2);display:flex;align-items:center;justify-content:center}
+.ccard::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .5s;background:linear-gradient(135deg,rgba(200,85,110,.15),rgba(200,169,110,.1))}
+.ccard:hover::before{opacity:1}
+.ccard:hover{box-shadow:0 24px 80px rgba(0,0,0,.6)}
+.cat-img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .7s ease;filter:brightness(.8) saturate(1.1)}
+.ccard:hover .cat-img{transform:scale(1.06);filter:brightness(.75) saturate(1.2)}
+.cov{position:absolute;inset:0;background:linear-gradient(180deg,transparent 25%,rgba(5,4,10,.88) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:28px;z-index:2}
+.clab{font-size:9px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-weight:400}
+.cname{font-family:var(--serif);font-size:28px;color:var(--cream);font-style:italic}
+.ccnt{font-size:11px;color:var(--dim);margin-top:5px;letter-spacing:.1em;font-weight:300}
+.carr{position:absolute;top:20px;right:20px;width:36px;height:36px;border:1px solid rgba(200,169,110,.5);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--gold);opacity:0;transform:translateY(-8px);transition:var(--T);z-index:3}
+.ccard:hover .carr{opacity:1;transform:translateY(0)}
+
+/* PRODUCTS */
+.psec{padding:90px 0}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:52px}
+.pcard{background:var(--d2);border:none;overflow:hidden;transition:var(--T);cursor:pointer;position:relative;display:flex;flex-direction:column}
+.pcard:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 0 1px rgba(200,169,110,.2)}
+.pimgw{position:relative;aspect-ratio:1;overflow:hidden;background:linear-gradient(135deg,var(--d3),var(--d4));display:flex;align-items:center;justify-content:center}
+.pimgw::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(200,85,110,.06),transparent);opacity:0;transition:opacity .4s}
+.pcard:hover .pimgw::after{opacity:1}
+.pimg-real{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .6s ease;filter:saturate(1.05)}
+.pcard:hover .pimg-real{transform:scale(1.07)}
+.pbadge{position:absolute;top:12px;left:12px;padding:4px 9px;font-size:8px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;z-index:2;font-family:var(--sans)}
+.bdf{background:var(--gold);color:var(--blk)}
+.bnw{background:#2ecc71;color:#fff}
+.bsl{background:var(--rose);color:#fff}
+.brr{background:var(--gold);color:var(--blk)}
+.blm{background:#d4a520;color:var(--blk)}
+.btr{background:#3498db;color:#fff}
+.bex{background:var(--gold);color:var(--blk)}
+.pacts{position:absolute;right:10px;top:10px;display:flex;flex-direction:column;gap:5px;opacity:0;transform:translateX(6px);transition:var(--T);z-index:3}
+.pcard:hover .pacts{opacity:1;transform:translateX(0)}
+.pabtn{width:32px;height:32px;background:rgba(5,4,10,.85);border:1px solid rgba(200,169,110,.25);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--txt);cursor:pointer;transition:var(--T);backdrop-filter:blur(8px)}
+.pabtn:hover{background:var(--gold);border-color:var(--gold);color:var(--blk)}
+.pabtn.wl{color:var(--rose)}
+.pinfo{padding:16px;flex:1;display:flex;flex-direction:column;background:var(--d2)}
+.pctag{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:5px;font-weight:400}
+.pname{font-family:var(--serif);font-size:15px;color:var(--cream);line-height:1.3;margin-bottom:4px;font-style:italic}
+.pmtrl{font-size:10px;color:var(--dim);margin-bottom:8px;letter-spacing:.05em;font-weight:300}
+.pstars{display:flex;align-items:center;gap:5px;margin-bottom:10px}
+.stars{color:var(--gold);font-size:11px;letter-spacing:1px}
+.rcnt{font-size:10px;color:var(--dim)}
+.ppr{display:flex;align-items:baseline;gap:7px;margin-top:auto;margin-bottom:12px;flex-wrap:wrap}
+.pcurr{font-family:var(--serif);font-size:18px;color:var(--gold);font-style:italic}
+.porig{font-size:11px;color:var(--dim);text-decoration:line-through}
+.pdisc{font-size:9px;color:var(--grn);font-weight:600}
+.btnAC{width:100%;padding:10px;background:transparent;border:1px solid rgba(200,169,110,.3);color:var(--gold);font-size:9px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:var(--T);display:flex;align-items:center;justify-content:center;gap:6px;font-family:var(--sans)}
+.btnAC:hover,.btnAC.added{background:var(--gold);border-color:var(--gold);color:var(--blk)}
+
+/* PROMO */
+.promo{background:linear-gradient(135deg,var(--d2) 0%,rgba(200,85,110,.07) 50%,var(--d3) 100%);border:1px solid rgba(200,169,110,.15);padding:64px 64px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:48px;position:relative;overflow:hidden;margin:90px 0}
+.promo::before{content:'LUXE';position:absolute;font-family:var(--serif);font-size:280px;color:rgba(200,169,110,.03);right:-40px;top:-60px;pointer-events:none;line-height:1;font-style:italic}
+.ptag{display:inline-block;border:1px solid rgba(200,169,110,.4);color:var(--gold);font-size:9px;font-weight:400;letter-spacing:.25em;text-transform:uppercase;padding:5px 16px;margin-bottom:16px;font-family:var(--sans)}
+.ptit{font-family:var(--serif);font-size:clamp(1.7rem,3vw,2.8rem);color:var(--cream);margin-bottom:14px;font-style:italic}
+.pdesc{color:var(--dim);font-size:13px;max-width:500px;line-height:1.8;font-weight:300}
+.cdown{display:flex;gap:14px;margin-top:20px;flex-wrap:wrap}
+.cdu{text-align:center;border:1px solid rgba(200,169,110,.2);padding:12px 20px;min-width:68px}
+.cdn{font-family:var(--serif);font-size:30px;color:var(--gold);font-style:italic;line-height:1}
+.cdl{font-size:8px;text-transform:uppercase;letter-spacing:.15em;color:var(--dim);margin-top:5px}
+.cds{font-family:var(--serif);font-size:24px;color:var(--rose);align-self:center;opacity:.4}
+
+/* TESTIMONIALS */
+.tsec{padding:80px 0}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:44px;background:rgba(200,169,110,.08)}
+.tcard{background:var(--d2);padding:32px;position:relative;transition:var(--T)}
+.tcard:hover{background:var(--d3)}
+.tstars{margin-bottom:14px;color:var(--gold);font-size:13px;letter-spacing:2px}
+.ttxt{font-size:13px;color:var(--txt);line-height:1.8;margin-bottom:20px;font-weight:300;font-style:italic}
+.tauth{display:flex;align-items:center;gap:12px}
+.tav{width:38px;height:38px;border-radius:0;background:var(--gp);color:#fff;font-weight:600;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--serif)}
+.tname{font-size:12px;font-weight:500;color:var(--cream);letter-spacing:.05em}
+.tloc{font-size:10px;color:var(--dim);font-weight:300}
+.tver{font-size:9px;color:var(--grn);margin-left:auto;letter-spacing:.1em}
+
+/* BRANDS */
+.bsec{padding:36px 0;border-top:1px solid rgba(200,169,110,.1);border-bottom:1px solid rgba(200,169,110,.1);overflow:hidden}
+.btrack{display:flex;gap:60px;align-items:center;animation:scrollb 30s linear infinite;white-space:nowrap}
+@keyframes scrollb{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.brand{font-family:var(--serif);font-size:16px;color:var(--dim);opacity:.35;white-space:nowrap;letter-spacing:.12em;transition:opacity .3s;font-style:italic}
+.brand:hover{opacity:.8;color:var(--gold)}
+
+/* NEWSLETTER */
+.nlsec{padding:80px 0}
+.nlbox{text-align:center;max-width:540px;margin:0 auto}
+.nlform{display:flex;gap:0;margin-top:28px;border:1px solid rgba(200,169,110,.3)}
+.nlinput{flex:1;background:transparent;border:none;color:var(--cream);padding:14px 22px;font-size:12px;outline:none;font-family:var(--sans);letter-spacing:.1em}
+.nlinput::placeholder{color:var(--dim);font-size:12px}
+.nlform .btn{border-radius:0;border:none;border-left:1px solid rgba(200,169,110,.3)}
+
+/* SHOP PAGE */
+.shpage{padding:60px 0}
+.shfrow{display:flex;gap:8px;margin-top:24px;flex-wrap:wrap;align-items:center}
+.chip{padding:7px 18px;font-size:10px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;border:1px solid var(--bdr);color:var(--dim);cursor:pointer;transition:var(--T);font-family:var(--sans)}
+.chip:hover{border-color:rgba(200,169,110,.4);color:var(--gold)}
+.chip.active{background:transparent;border-color:var(--gold);color:var(--gold)}
+.ssort{margin-left:auto;background:var(--d2);border:1px solid var(--bdr);color:var(--txt);padding:7px 14px;font-size:10px;outline:none;cursor:pointer;letter-spacing:.1em;font-family:var(--sans)}
+
+/* PRODUCT DETAIL */
+.dlayout{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.dimg-area{position:sticky;top:100px}
+.dimg{aspect-ratio:1;background:linear-gradient(135deg,var(--d2),var(--d3));display:flex;align-items:center;justify-content:center;font-size:140px;border:1px solid rgba(200,169,110,.15);overflow:hidden}
+.dthumbs{display:flex;gap:8px;margin-top:12px}
+.dthumb{width:68px;height:68px;background:var(--d3);border:1px solid var(--bdr);display:flex;align-items:center;justify-content:center;font-size:26px;cursor:pointer;transition:var(--T)}
+.dthumb:hover,.dthumb.active{border-color:rgba(200,169,110,.5)}
+.dcat{font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);font-weight:400;margin-bottom:14px}
+.dname{font-family:var(--serif);font-size:clamp(2rem,3vw,2.8rem);color:var(--cream);line-height:1.15;margin-bottom:16px;font-style:italic}
+.dprice{font-family:var(--serif);font-size:2.2rem;color:var(--gold);margin-bottom:8px;font-style:italic}
+.ddesc{font-size:14px;color:var(--txt);line-height:1.85;margin-bottom:28px;font-weight:300}
+.dspecs{border:1px solid var(--bdr);padding:22px;margin-bottom:28px}
+.srow{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:12px}
+.srow:last-child{border-bottom:none}
+.slb{color:var(--dim);font-weight:400;letter-spacing:.08em}
+.sv{color:var(--cream);font-family:var(--serif);font-style:italic}
+.dqrow{display:flex;align-items:center;gap:16px;margin-bottom:22px}
+.qctrl{display:flex;align-items:center;gap:8px;border:1px solid var(--bdr);padding:4px 8px}
+.qbtn{width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--txt);transition:var(--T)}
+.qbtn:hover{color:var(--gold)}
+.qval{min-width:28px;text-align:center;font-size:14px;color:var(--cream);font-weight:400;font-family:var(--serif)}
+.dctas{display:flex;gap:12px;margin-bottom:28px}
+.dtrust{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.tritem{border:1px solid var(--bdr);padding:14px;text-align:center}
+.tricon{margin-bottom:6px}
+.trtxt{font-size:10px;color:var(--dim);letter-spacing:.1em;text-transform:uppercase;font-weight:300}
+.relsec{margin-top:80px;padding-top:60px;border-top:1px solid rgba(200,169,110,.1)}
+
+/* CHECKOUT */
+.colayout{display:grid;grid-template-columns:1fr 400px;gap:44px;align-items:start}
+.cofsec{border:1px solid var(--bdr);padding:36px;margin-bottom:20px}
+.cosectit{font-family:var(--serif);font-size:20px;color:var(--cream);margin-bottom:24px;display:flex;align-items:center;gap:12px;font-style:italic}
+.stepn{width:26px;height:26px;background:var(--gold);color:var(--blk);font-family:var(--sans);font-size:11px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fg{margin-bottom:18px}
+.fl{display:block;font-size:9px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:7px}
+.fi{width:100%;background:var(--d3);border:1px solid var(--bdr);color:var(--cream);padding:12px 16px;font-size:13px;outline:none;transition:border-color .3s;font-family:var(--sans)}
+.fi:focus{border-color:rgba(200,169,110,.5)}
+.fi::placeholder{color:var(--dim)}
+.fi.err{border-color:var(--red)}
+.ferr{font-size:10px;color:var(--red);margin-top:4px}
+.pmthds{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
+.pmth{background:var(--d3);border:1px solid var(--bdr);padding:16px 12px;text-align:center;cursor:pointer;transition:var(--T)}
+.pmth:hover{border-color:rgba(200,169,110,.4)}
+.pmth.active{border-color:var(--gold);background:rgba(200,169,110,.07)}
+.pmico{font-size:26px;margin-bottom:6px}
+.pmnm{font-size:10px;font-weight:500;color:var(--cream);letter-spacing:.1em;text-transform:uppercase}
+.payinp{background:var(--d3);border:1px solid var(--bdr);padding:20px;margin-top:16px;display:none}
+.payinp.show{display:block}
+.crowc{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px}
+.osum{border:1px solid var(--bdr);padding:28px;position:sticky;top:100px}
+.osumtit{font-family:var(--serif);font-size:20px;color:var(--cream);margin-bottom:20px;font-style:italic}
+.oitem{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.oitemico{width:54px;height:54px;background:var(--d3);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;overflow:hidden}
+.oitemnm{font-size:12px;color:var(--cream);line-height:1.35;font-family:var(--serif);font-style:italic}
+.oitemmeta{font-size:10px;color:var(--dim);margin-top:3px;font-weight:300}
+.oitempr{font-family:var(--serif);font-size:15px;color:var(--gold);margin-left:auto;flex-shrink:0;font-style:italic}
+.sumrow{display:flex;justify-content:space-between;padding:10px 0;font-size:12px;border-bottom:1px solid rgba(255,255,255,.04)}
+.sumlbl{color:var(--dim);font-weight:300}
+.sumval{color:var(--cream)}
+.sumtot{display:flex;justify-content:space-between;padding:14px 0;margin-top:4px;font-size:14px;font-weight:500;color:var(--cream)}
+.sumtotval{font-family:var(--serif);font-size:22px;color:var(--gold);font-style:italic}
+.promorow{margin-top:16px;display:flex;gap:0;border:1px solid var(--bdr)}
+.promorow input{flex:1;background:transparent;border:none;color:var(--cream);padding:10px 14px;font-size:11px;outline:none;font-family:var(--sans);letter-spacing:.1em}
+.promorow input:focus{outline:none}
+.cosuccess{text-align:center;padding:60px 20px;display:none}
+.cosuci{font-size:72px;margin-bottom:20px}
+.cosuctit{font-family:var(--serif);font-size:2.2rem;color:var(--cream);margin-bottom:12px;font-style:italic}
+.cosucoid{font-family:var(--serif);font-size:1.1rem;color:var(--gold);margin-bottom:8px;font-style:italic}
+
+/* CART DRAWER */
+.covrlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:9999;display:none;backdrop-filter:blur(4px)}
+.covrlay.show{display:block}
+.cdrawer{position:fixed;top:0;right:-500px;width:480px;height:100vh;background:var(--dark);border-left:1px solid rgba(200,169,110,.15);z-index:10000;transition:right .4s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;box-shadow:-20px 0 80px rgba(0,0,0,.6)}
+.cdrawer.open{right:0}
+.chead{padding:24px;border-bottom:1px solid var(--bdr);display:flex;align-items:center;justify-content:space-between}
+.cheadtit{font-family:var(--serif);font-size:22px;color:var(--cream);font-style:italic}
+.cclosebtn{width:34px;height:34px;border:1px solid var(--bdr);color:var(--txt);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--T);background:transparent}
+.cclosebtn:hover{border-color:rgba(200,169,110,.4);color:var(--cream)}
+.citems{flex:1;overflow-y:auto;padding:20px}
+.citem{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.cithumb{width:66px;height:66px;background:var(--d3);border:1px solid var(--bdr);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:28px;overflow:hidden}
+.citinfo{flex:1}
+.citnm{font-size:13px;color:var(--cream);margin-bottom:3px;font-family:var(--serif);font-style:italic}
+.citmeta{font-size:10px;color:var(--dim);margin-bottom:8px;font-weight:300}
+.citpr{font-family:var(--serif);font-size:16px;color:var(--gold);font-style:italic}
+.citqrow{display:flex;align-items:center;gap:8px;margin-top:8px}
+.citqbtn{width:24px;height:24px;border:1px solid var(--bdr);color:var(--cream);font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--T);background:transparent}
+.citqbtn:hover{border-color:rgba(200,169,110,.4);color:var(--gold)}
+.citqval{font-size:13px;color:var(--cream);min-width:20px;text-align:center;font-weight:400}
+.citrm{color:var(--dim);cursor:pointer;font-size:16px;align-self:start;padding:4px;transition:color .2s}
+.citrm:hover{color:var(--red)}
+.cempty{text-align:center;padding:60px 20px}
+.cemptyico{font-size:56px;opacity:.15;margin-bottom:16px}
+.cemptytxt{color:var(--dim);font-size:13px;font-weight:300}
+.cftr{padding:20px 24px;border-top:1px solid var(--bdr);background:var(--d2)}
+.crow{display:flex;justify-content:space-between;padding:6px 0;font-size:12px;color:var(--dim)}
+.crowval{font-family:var(--serif);font-size:15px;color:var(--cream);font-style:italic}
+.ctotrow{display:flex;justify-content:space-between;padding:12px 0 18px;border-top:1px solid var(--bdr);margin-top:6px}
+.ctotlbl{font-size:13px;font-weight:500;color:var(--cream);letter-spacing:.1em;text-transform:uppercase;font-family:var(--sans)}
+.ctotval{font-family:var(--serif);font-size:22px;color:var(--gold);font-style:italic}
+
+/* AUTH MODAL */
+.mback{position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:20000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;visibility:hidden;transition:all .3s;backdrop-filter:blur(12px)}
+.mback.show{opacity:1;visibility:visible}
+.mbox{background:var(--d2);border:1px solid rgba(200,169,110,.2);padding:48px;width:100%;max-width:440px;position:relative;transform:scale(.95) translateY(10px);transition:transform .3s;box-shadow:0 40px 120px rgba(0,0,0,.7)}
+.mback.show .mbox{transform:scale(1) translateY(0)}
+.mclose{position:absolute;top:18px;right:18px;width:32px;height:32px;border:1px solid var(--bdr);background:none;color:var(--dim);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;transition:var(--T)}
+.mclose:hover{border-color:rgba(200,169,110,.4);color:var(--cream)}
+.mhead{margin-bottom:30px}
+.mttl{font-family:var(--serif);font-size:28px;color:var(--cream);font-style:italic}
+.mttab{display:flex;gap:0;border-bottom:1px solid var(--bdr);margin-bottom:26px}
+.mtab{padding:10px 20px;font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);cursor:pointer;transition:color .3s;border-bottom:1px solid transparent;margin-bottom:-1px;font-family:var(--sans)}
+.mtab.active{color:var(--gold);border-bottom-color:var(--gold)}
+.slogin{margin-top:24px;padding-top:22px;border-top:1px solid var(--bdr)}
+.sloginlbl{text-align:center;font-size:10px;color:var(--dim);margin-bottom:14px;text-transform:uppercase;letter-spacing:.15em}
+.sbtns{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.sbtn{padding:11px;border:1px solid var(--bdr);background:transparent;color:var(--txt);font-size:12px;cursor:pointer;transition:var(--T);display:flex;align-items:center;justify-content:center;gap:8px}
+.sbtn:hover{border-color:rgba(200,169,110,.4);color:var(--cream)}
+
+/* QUICK VIEW */
+.qvback{position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:15000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;visibility:hidden;transition:all .3s;backdrop-filter:blur(8px)}
+.qvback.show{opacity:1;visibility:visible}
+.qvbox{background:var(--d2);border:1px solid rgba(200,169,110,.2);width:100%;max-width:780px;position:relative;transform:scale(.93) translateY(16px);transition:transform .35s cubic-bezier(.34,1.56,.64,1);box-shadow:0 40px 120px rgba(0,0,0,.7);overflow:hidden;max-height:90vh;overflow-y:auto}
+.qvback.show .qvbox{transform:scale(1) translateY(0)}
+.qvcl{position:absolute;top:14px;right:14px;z-index:10;width:32px;height:32px;background:rgba(5,4,10,.85);border:1px solid rgba(200,169,110,.25);color:var(--txt);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:15px;transition:var(--T);backdrop-filter:blur(8px)}
+.qvcl:hover{background:var(--red);border-color:var(--red);color:#fff}
+.qvlayout{display:grid;grid-template-columns:1fr 1fr}
+.qvimgs{background:linear-gradient(135deg,var(--d3),var(--d4));display:flex;align-items:center;justify-content:center;aspect-ratio:1;position:relative;overflow:hidden}
+.qvemoji{font-size:110px;position:relative;z-index:1}
+.qvinfo{padding:36px;display:flex;flex-direction:column}
+.qvcat{font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);font-weight:400;margin-bottom:10px}
+.qvname{font-family:var(--serif);font-size:clamp(1.4rem,2.5vw,1.9rem);color:var(--cream);line-height:1.2;margin-bottom:12px;font-style:italic}
+.qvprice{font-family:var(--serif);font-size:1.8rem;color:var(--gold);margin-bottom:6px;font-style:italic}
+.qvorig{font-size:12px;color:var(--dim);text-decoration:line-through;margin-bottom:16px}
+.qvdesc{font-size:12px;color:var(--txt);line-height:1.8;margin-bottom:20px;font-weight:300}
+.qvspecs{background:var(--d3);padding:16px;margin-bottom:20px;border:1px solid rgba(255,255,255,.04)}
+.qvsrow{display:flex;justify-content:space-between;font-size:11px;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.qvsrow:last-child{border:none}
+.qvslbl{color:var(--dim);font-weight:300}
+.qvsval{color:var(--cream);font-family:var(--serif);font-style:italic}
+.qvctas{display:flex;gap:10px;margin-top:auto}
+.qvctas .btn{flex:1;font-size:9px}
+
+/* MPESA */
+#mpesaOv{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:30000;display:none;align-items:center;justify-content:center;backdrop-filter:blur(16px)}
+.mpbox{background:var(--d2);border:1px solid #27ae60;padding:48px;text-align:center;max-width:380px;width:100%;box-shadow:0 0 80px rgba(76,175,80,.15)}
+.mplogo{font-size:52px;margin-bottom:16px}
+.mptit{font-family:var(--serif);font-size:26px;color:var(--cream);margin-bottom:8px;font-style:italic}
+.mpsub{color:var(--dim);font-size:12px;margin-bottom:28px;font-weight:300;letter-spacing:.1em}
+.mpamt{font-family:var(--serif);font-size:38px;color:#27ae60;margin-bottom:6px;font-style:italic}
+.mpph{font-size:12px;color:var(--dim);margin-bottom:28px}
+.mpdots{display:flex;justify-content:center;gap:12px;margin-bottom:28px}
+.mpdot{width:13px;height:13px;border-radius:50%;border:2px solid #27ae60;transition:background .3s}
+.mpdot.filled{background:#27ae60}
+.mpacts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mpcnf{background:#27ae60;color:#fff;border:none;padding:14px;font-size:12px;font-weight:600;cursor:pointer;transition:background .2s;letter-spacing:.12em;text-transform:uppercase}
+.mpcnf:hover{background:#219a52}
+.mpcnc{background:transparent;color:var(--red);border:1px solid rgba(224,80,80,.4);padding:14px;font-size:12px;font-weight:500;cursor:pointer;transition:var(--T);letter-spacing:.12em;text-transform:uppercase}
+.mpcnc:hover{background:rgba(224,80,80,.1)}
+@keyframes mpp{0%,100%{opacity:1}50%{opacity:.3}}
+.mppulse{animation:mpp 1s ease-in-out infinite}
+
+/* THEME TOGGLE */
+.theme-toggle{width:40px;height:40px;border-radius:2px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:var(--T);position:relative;border:1px solid transparent;background:transparent;color:var(--dim);font-size:16px}
+.theme-toggle:hover{color:var(--gold);border-color:rgba(200,169,110,.2)}
+
+/* AI FAQ FLOAT */
+#ai-faq-bubble{position:fixed;bottom:28px;left:28px;z-index:8000;width:54px;height:54px;background:var(--gp);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(200,85,110,.4);cursor:pointer;transition:transform .3s,box-shadow .3s;border:none}
+#ai-faq-bubble:hover{transform:scale(1.1);box-shadow:0 8px 36px rgba(200,85,110,.55)}
+#ai-faq-bubble svg{width:26px;height:26px;fill:#fff}
+#ai-faq-panel{position:fixed;bottom:96px;left:28px;z-index:8001;width:340px;background:var(--d2);border:1px solid rgba(200,169,110,.25);border-radius:12px;box-shadow:0 16px 56px rgba(0,0,0,.55);display:none;flex-direction:column;overflow:hidden;max-height:480px}
+#ai-faq-panel.open{display:flex}
+.faq-header{background:var(--gp);padding:16px 20px;display:flex;align-items:center;gap:10px;justify-content:space-between}
+.faq-header-left{display:flex;align-items:center;gap:10px}
+.faq-avatar{width:34px;height:34px;background:rgba(255,255,255,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.faq-htit{font-family:var(--serif);font-size:15px;color:#fff;font-style:italic}
+.faq-hsub{font-size:9px;color:rgba(255,255,255,.75);letter-spacing:.15em;text-transform:uppercase}
+.faq-hclose{background:rgba(255,255,255,.2);border:none;color:#fff;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.faq-hclose:hover{background:rgba(255,255,255,.35)}
+.faq-msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
+.faq-msg{max-width:88%;padding:10px 14px;border-radius:12px;font-size:12px;line-height:1.65;font-weight:300}
+.faq-msg.ai{background:var(--d3);color:var(--txt);border-radius:4px 12px 12px 12px;align-self:flex-start}
+.faq-msg.user{background:var(--gp);color:#fff;border-radius:12px 4px 12px 12px;align-self:flex-end;font-weight:400}
+.faq-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 16px 12px}
+.faq-chip{padding:5px 12px;border:1px solid rgba(200,169,110,.35);color:var(--gold);font-size:10px;border-radius:20px;cursor:pointer;transition:var(--T);background:transparent;font-family:var(--sans);letter-spacing:.05em}
+.faq-chip:hover{background:rgba(200,169,110,.12);border-color:var(--gold)}
+.faq-input-row{display:flex;gap:0;border-top:1px solid var(--bdr);flex-shrink:0}
+#ai-faq-input{flex:1;background:var(--d3);border:none;color:var(--cream);padding:12px 16px;font-size:12px;outline:none;font-family:var(--sans)}
+#ai-faq-input::placeholder{color:var(--dim)}
+#ai-faq-send{background:var(--gp);border:none;color:#fff;padding:12px 16px;cursor:pointer;font-size:14px;transition:filter .2s;flex-shrink:0}
+#ai-faq-send:hover{filter:brightness(1.1)}
+.faq-typing{display:flex;gap:4px;align-items:center;padding:8px 12px;background:var(--d3);border-radius:4px 12px 12px 12px;align-self:flex-start;width:fit-content}
+.faq-dot{width:7px;height:7px;background:var(--dim);border-radius:50%;animation:fdot 1.2s ease-in-out infinite}
+.faq-dot:nth-child(2){animation-delay:.2s}
+.faq-dot:nth-child(3){animation-delay:.4s}
+@keyframes fdot{0%,80%,100%{transform:scale(0.6);opacity:.4}40%{transform:scale(1);opacity:1}}
+
+/* TOAST */
+#toast{position:fixed;bottom:28px;right:28px;z-index:50000;display:flex;flex-direction:column;gap:8px;pointer-events:none}
+.titem{background:var(--d2);border:1px solid rgba(200,169,110,.15);padding:13px 18px;display:flex;align-items:center;gap:10px;font-size:12px;color:var(--cream);box-shadow:var(--shadow);animation:tin .35s cubic-bezier(.34,1.56,.64,1);pointer-events:all;max-width:300px;border-left:2px solid var(--gold)}
+.titem.success{border-left-color:var(--grn)}
+.titem.error{border-left-color:var(--red)}
+.titem.info{border-left-color:var(--rose)}
+@keyframes tin{from{transform:translateX(110%);opacity:0}to{transform:translateX(0);opacity:1}}
+@keyframes tout{to{transform:translateX(110%);opacity:0}}
+
+/* FOOTER */
+.footer{background:var(--d2);border-top:1px solid rgba(200,169,110,.12);padding:52px 0 28px;margin-top:40px}
+.fgrid-footer{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.fbdesc{font-size:12px;color:var(--dim);line-height:1.85;margin:16px 0;font-weight:300}
+.fsocs{display:flex;gap:8px;margin-top:20px}
+.fsoc{width:36px;height:36px;border:1px solid var(--bdr);display:flex;align-items:center;justify-content:center;font-size:14px;cursor:pointer;transition:var(--T);color:var(--dim)}
+.fsoc:hover{border-color:rgba(200,169,110,.4);color:var(--gold)}
+.fctit{font-size:9px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--cream);margin-bottom:18px}
+.flinks{display:flex;flex-direction:column;gap:9px}
+.flink{font-size:12px;color:var(--dim);transition:color .2s;cursor:pointer;font-weight:300}
+.flink:hover{color:var(--gold)}
+.fbot{border-top:1px solid rgba(255,255,255,.04);padding-top:22px;display:flex;align-items:center;justify-content:space-between}
+.fbotxt{font-size:11px;color:var(--dim);font-weight:300}
+.fpayicos{display:flex;gap:8px}
+.fpay{border:1px solid var(--bdr);padding:5px 10px;font-size:9px;color:var(--dim);font-weight:600;letter-spacing:.1em}
+
+/* MOBILE NAV */
+#mobnav{display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:var(--dark);z-index:9500;padding:28px;overflow-y:auto}
+
+/* AS SEEN ON */
+.asgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:0;overflow:hidden}
+.asgrid img{width:100%;height:180px;object-fit:cover;filter:brightness(.75) saturate(.9);transition:filter .4s}
+.asgrid img:hover{filter:brightness(.9) saturate(1.2)}
+
+/* SHOP DROPDOWN */
+.shop-nav-item{position:relative}
+.shop-dropdown{position:absolute;top:calc(100% + 1px);left:50%;transform:translateX(-50%) translateY(-8px);min-width:780px;background:var(--dark);border:1px solid rgba(200,169,110,.18);box-shadow:0 24px 80px rgba(0,0,0,.7);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s ease,transform .25s ease,visibility .25s;z-index:2000;backdrop-filter:blur(24px);border-radius:0 0 4px 4px}
+.shop-nav-item:hover .shop-dropdown{opacity:1;visibility:visible;pointer-events:all;transform:translateX(-50%) translateY(0)}
+.sdrop-inner{display:grid;grid-template-columns:1.4fr auto 1fr 1fr 1fr;align-items:stretch}
+.sdrop-col{padding:24px 20px;cursor:pointer;transition:background .2s;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:4px}
+.sdrop-col:hover{background:rgba(200,169,110,.06)}
+.sdrop-divider{width:1px;background:rgba(200,169,110,.1);margin:16px 0}
+.sdrop-ico{font-size:20px;margin-bottom:4px}
+.sdrop-label{font-family:var(--serif);font-size:15px;color:var(--cream);font-style:italic;font-weight:400}
+.sdrop-sub{font-size:10px;color:var(--dim);letter-spacing:.1em;text-transform:uppercase;font-weight:300;margin-bottom:8px}
+.sdrop-img{width:100%;height:90px;object-fit:cover;object-position:center;opacity:.75;transition:opacity .3s;border-radius:2px;margin-top:auto}
+.sdrop-col:hover .sdrop-img{opacity:1}
+.sdrop-sale{justify-content:center;text-align:center;background:linear-gradient(135deg,rgba(200,85,110,.06),rgba(200,169,110,.04))}
+.sdrop-badge{background:var(--gp);color:#fff;font-size:9px;font-weight:700;letter-spacing:.25em;padding:4px 12px;display:inline-block;margin-top:8px;animation:pulse-badge 2s ease-in-out infinite}
+@keyframes pulse-badge{0%,100%{box-shadow:0 0 0 0 rgba(200,85,110,.4)}50%{box-shadow:0 0 0 8px rgba(200,85,110,0)}}
+html.light .shop-dropdown{background:rgba(250,247,242,.98)!important;border-color:rgba(156,110,40,.2)!important;box-shadow:0 16px 60px rgba(100,60,60,.18)!important}
+html.light .sdrop-col:hover{background:rgba(156,110,40,.05)!important}
+html.light .sdrop-divider{background:rgba(156,110,40,.15)!important}
+
+/* SCROLL-REVEAL ANIMATIONS */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-28px);transition:opacity .65s ease,transform .65s ease}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(28px);transition:opacity .65s ease,transform .65s ease}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+.reveal-scale{opacity:0;transform:scale(.94);transition:opacity .55s ease,transform .55s cubic-bezier(.34,1.56,.64,1)}
+.reveal-scale.visible{opacity:1;transform:scale(1)}
+[data-delay="1"]{transition-delay:.1s}[data-delay="2"]{transition-delay:.2s}[data-delay="3"]{transition-delay:.3s}[data-delay="4"]{transition-delay:.4s}[data-delay="5"]{transition-delay:.5s}
+
+/* ABOUT PAGE */
+.about-hero{min-height:70vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:72px;padding:80px 0;position:relative;overflow:hidden}
+.about-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 80% 50%,rgba(200,169,110,.07) 0%,transparent 70%);pointer-events:none}
+.about-img-stack{position:relative;height:520px}
+.about-img-main{width:75%;height:420px;object-fit:cover;object-position:center;position:absolute;top:0;right:0;border:1px solid rgba(200,169,110,.2);box-shadow:0 24px 80px rgba(0,0,0,.5)}
+.about-img-accent{width:55%;height:260px;object-fit:cover;object-position:center;position:absolute;bottom:0;left:0;border:1px solid rgba(200,169,110,.2);box-shadow:0 16px 48px rgba(0,0,0,.5)}
+.about-img-badge{position:absolute;bottom:76px;right:-10px;background:var(--gp);color:#fff;padding:14px 20px;text-align:center;box-shadow:0 8px 28px rgba(200,85,110,.35)}
+.about-img-badge-n{font-family:var(--serif);font-size:28px;font-style:italic;line-height:1}
+.about-img-badge-l{font-size:9px;letter-spacing:.2em;text-transform:uppercase;opacity:.85;margin-top:2px}
+.about-values{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(200,169,110,.1);margin:80px 0}
+.aval{background:var(--blk);padding:36px 28px;text-align:center;transition:background .3s}
+.aval:hover{background:var(--d2)}
+.aval-ico{font-size:36px;margin-bottom:14px}
+.aval-t{font-family:var(--serif);font-size:18px;color:var(--cream);margin-bottom:8px;font-style:italic}
+.aval-d{font-size:12px;color:var(--dim);line-height:1.75;font-weight:300}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+.tmember{text-align:center}
+.tav-lg{width:80px;height:80px;background:var(--gp);color:#fff;font-family:var(--serif);font-size:28px;font-style:italic;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;border-radius:2px}
+.tname-lg{font-family:var(--serif);font-size:16px;color:var(--cream);font-style:italic;margin-bottom:4px}
+.trole{font-size:10px;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px}
+.tbio{font-size:12px;color:var(--dim);line-height:1.7;font-weight:300}
+.cert-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:28px}
+.cert-badge{border:1px solid rgba(200,169,110,.3);padding:10px 20px;font-size:11px;color:var(--gold);letter-spacing:.15em;font-weight:500;font-family:var(--serif);font-style:italic;transition:var(--T)}
+.cert-badge:hover{background:rgba(200,169,110,.07);border-color:var(--gold)}
+.showroom-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:60px 0}
+html.light .aval{background:var(--blk)!important}
+html.light .aval:hover{background:var(--d2)!important}
+html.light .about-values{background:rgba(156,110,40,.12)!important}
+
+/* RESPONSIVE */
+@media(max-width:1200px){
+  .hero{grid-template-columns:1fr}
+  .hvis{display:none}
+  .colayout{grid-template-columns:1fr}
+  .dlayout{grid-template-columns:1fr;gap:32px}
+  .fgrid-footer{grid-template-columns:1fr 1fr}
+}
+@media(max-width:900px){
+  .nlinks,.nsw{display:none}
+  .hamburger{display:flex}
+  .pgrid{grid-template-columns:repeat(2,1fr)}
+  .cgrid{grid-template-columns:repeat(3,1fr);gap:2px}
+  .tgrid{grid-template-columns:1fr}
+  .fgrid{grid-template-columns:repeat(2,1fr)}
+  .hero-stats{flex-wrap:wrap;gap:24px}
+  .nlform{flex-direction:column;border:none;gap:8px}
+  .nlform .btn{border:1px solid rgba(200,169,110,.4);border-radius:0}
+  .nlinput{border:1px solid rgba(200,169,110,.3);padding:13px 18px}
+  .cdrawer{width:100%}
+  .promo{grid-template-columns:1fr;padding:40px 28px}
+  .qvlayout{grid-template-columns:1fr}
+  .qvimgs{aspect-ratio:auto;height:240px}
+  .asgrid{grid-template-columns:repeat(3,1fr)}
+  .asgrid img{height:140px}
+  #hiw-grid{grid-template-columns:repeat(2,1fr)!important}
+}
+@media(max-width:600px){
+  #hiw-grid{grid-template-columns:repeat(2,1fr)!important}
+  #ai-faq-bubble{bottom:16px;left:16px;width:46px;height:46px}
+  .pgrid{grid-template-columns:repeat(2,1fr);gap:2px}
+  .cgrid{grid-template-columns:repeat(2,1fr);gap:2px}
+  .container{padding:0 14px}
+  #toast{bottom:16px;right:12px;left:12px}
+  .pname{font-size:13px;line-height:1.2}
+  .pmtrl{font-size:9px}
+  .pinfo{padding:12px 10px}
+  .pcurr{font-size:16px}
+  .pstars{margin-bottom:5px}
+  .rcnt{display:none}
+  .btnAC{font-size:8px;padding:8px 6px;letter-spacing:.1em}
+  .fgrid-footer{grid-template-columns:1fr}
+  .hero{gap:32px;padding:52px 0}
+  h1{font-size:2.2rem}
+  .hero-stats{gap:16px;flex-wrap:wrap}
+  .snum{font-size:24px}
+  .promo{padding:28px 18px}
+  .tgrid{gap:2px}
+  .tcard{padding:22px}
+  .asgrid{grid-template-columns:repeat(2,1fr)}
+  .asgrid img{height:110px}
+  /* PRODUCT DETAIL — mobile full stack, compact */
+  .dlayout{grid-template-columns:1fr;gap:20px}
+  .dimg-area{position:static}
+  .dimg{aspect-ratio:4/3;font-size:80px}
+  .dthumbs{display:none}
+  .dname{font-size:1.5rem}
+  .dprice{font-size:1.6rem}
+  .ddesc{font-size:12px}
+  .dspecs{padding:14px}
+  .srow{font-size:11px;padding:8px 0}
+  .dctas{flex-direction:column;gap:8px}
+  .dctas .btn{width:100%;padding:13px}
+  .dtrust{grid-template-columns:repeat(3,1fr);gap:6px}
+  .tritem{padding:10px 6px}
+  .trtxt{font-size:9px}
+  .relsec{margin-top:40px;padding-top:32px}
+  .colayout{gap:24px}
+  .pmthds{grid-template-columns:1fr 1fr}
+  .crowc{grid-template-columns:1fr}
+  .frow{grid-template-columns:1fr}
+  #tab-product .container{padding-top:24px;padding-bottom:48px}
+}
+</style>
+</head>
+<body>
+
+<div class="abar">✦ &nbsp; Free Shipping on Orders Over KSh 50,000 &nbsp; · &nbsp; GIA Certified Gemstones &nbsp; · &nbsp; 30-Day Returns &nbsp; · &nbsp; M-Pesa Accepted &nbsp; ✦</div>
+
+<nav class="navbar">
+  <div class="container">
+    <div class="nav-in">
+      <div class="nlogo" onclick="showTab('home')"><span class="nlogo-txt"><em>Luxe</em><span>Gem</span></span></div>
+      <div class="nlinks">
+        <span class="nlink active" id="nav-home" onclick="showTab('home')">Home</span>
+        <span class="nlink shop-nav-item" id="nav-shop" onclick="showTab('shop','all')">
+          Shop <span style="font-size:8px;opacity:.6;margin-left:2px">▾</span>
+          <div class="shop-dropdown" id="shopDrop">
+            <div class="sdrop-inner">
+              <div class="sdrop-col" onclick="event.stopPropagation();showTab('shop','all')">
+                <div class="sdrop-label">All Collections</div>
+                <div class="sdrop-sub">Explore everything</div>
+                <img src="https://images.unsplash.com/photo-1611955167811-4711904bb9f8?w=280&h=180&fit=crop&q=80" alt="All Jewellery" class="sdrop-img">
+              </div>
+              <div class="sdrop-divider"></div>
+              <div class="sdrop-col" onclick="event.stopPropagation();showTab('shop','rings')">
+                <div class="sdrop-ico">💍</div>
+                <div class="sdrop-label">Rings</div>
+                <div class="sdrop-sub">5 exclusive pieces</div>
+                <img src="https://images.unsplash.com/photo-1635767798595-a1d2c9deacb4?w=280&h=180&fit=crop&q=80" alt="Rings" class="sdrop-img">
+              </div>
+              <div class="sdrop-col" onclick="event.stopPropagation();showTab('shop','necklaces')">
+                <div class="sdrop-ico">📿</div>
+                <div class="sdrop-label">Necklaces</div>
+                <div class="sdrop-sub">5 exclusive pieces</div>
+                <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=280&h=180&fit=crop&q=80" alt="Necklaces" class="sdrop-img">
+              </div>
+              <div class="sdrop-col" onclick="event.stopPropagation();showTab('shop','earrings')">
+                <div class="sdrop-ico">✨</div>
+                <div class="sdrop-label">Earrings</div>
+                <div class="sdrop-sub">5 exclusive pieces</div>
+                <img src="https://images.unsplash.com/photo-1629224316810-9d8805b95e76?w=280&h=180&fit=crop&q=80" alt="Earrings" class="sdrop-img">
+              </div>
+              <div class="sdrop-col sdrop-sale" onclick="event.stopPropagation();showTab('shop','_sale')">
+                <div class="sdrop-ico">🏷️</div>
+                <div class="sdrop-label" style="color:var(--rose)">Sale</div>
+                <div class="sdrop-sub">Up to 15% off</div>
+                <div class="sdrop-badge">SALE</div>
+              </div>
+            </div>
+          </div>
+        </span>
+        <span class="nlink" id="nav-about" onclick="showTab('about')">About</span>
+      </div>
+      <div class="nsw">
+        <span class="nsi-icon">🔍</span>
+        <input class="nsi" type="text" placeholder="Search jewellery…" id="nav-search" oninput="doSearch(this.value)" autocomplete="off">
+        <div class="nsdrop" id="sdrop"></div>
+      </div>
+      <div class="nright">
+        <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle light/dark mode">🌙</button>
+        <button class="nicoBtn" onclick="toggleCart()">🛒<span class="nbadge cart-badge" id="cbadge" style="display:none">0</span></button>
+        <div class="nav-ua" style="display:none;align-items:center;gap:4px;">
+          <div style="width:34px;height:34px;background:var(--gp);color:#fff;font-weight:600;font-size:12px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-family:var(--serif)" id="uav">U</div>
+        </div>
+        <button class="btn btn-sm btn-o nlbtn" onclick="openAuth('login')">Login</button>
+        <button class="hamburger" onclick="toggleMob()">☰</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div id="mobnav">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:36px">
+    <span style="font-family:var(--serif);font-size:22px;color:var(--cream);font-style:italic"><em>Luxe</em><span style="background:var(--gp);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:normal">Gem</span></span>
+    <button onclick="toggleMob()" style="font-size:22px;color:var(--dim)">✕</button>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:4px">
+    <span class="nlink" style="height:auto;padding:15px 0;border-bottom:1px solid var(--bdr)" onclick="showTab('home');toggleMob()">Home</span>
+    <span class="nlink" style="height:auto;padding:15px 0;border-bottom:1px solid var(--bdr)" onclick="showTab('shop','all');toggleMob()">Shop All</span>
+    <span class="nlink" style="height:auto;padding:15px 0;border-bottom:1px solid var(--bdr);padding-left:18px;font-size:10px" onclick="showTab('shop','rings');toggleMob()">💍 Rings</span>
+    <span class="nlink" style="height:auto;padding:15px 0;border-bottom:1px solid var(--bdr);padding-left:18px;font-size:10px" onclick="showTab('shop','necklaces');toggleMob()">📿 Necklaces</span>
+    <span class="nlink" style="height:auto;padding:15px 0;border-bottom:1px solid var(--bdr);padding-left:18px;font-size:10px" onclick="showTab('shop','earrings');toggleMob()">✨ Earrings</span>
+    <span class="nlink" style="height:auto;padding:15px 0;border-bottom:1px solid var(--bdr)" onclick="showTab('about');toggleMob()">About</span>
+  </div>
+  <div style="margin-top:32px;display:flex;flex-direction:column;gap:10px">
+    <button class="btn btn-p btn-full" onclick="openAuth('login');toggleMob()">Login / Sign Up</button>
+  </div>
+</div>
+
+<main>
+
+<!-- HOME TAB -->
+<div class="ptab active" id="tab-home">
+<div class="container">
+
+<section class="hero">
+  <!-- Mobile background image — visible only on screens ≤1200px, blends with dark background -->
+  <div class="hero-mob-bg">
+    <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=900&h=1200&fit=crop&q=85" alt="" aria-hidden="true">
+  </div>
+  <div>
+    <div class="hero-ey"><span class="hero-line"></span>New Collection 2025</div>
+    <h1>Where Gemstones<br>Meet <em>Artistry</em></h1>
+    <p class="hero-lead">Discover extraordinary jewellery crafted for the discerning soul. From conflict-free diamonds to rare tanzanite — each piece tells a story of unparalleled beauty.</p>
+    <div class="hero-ctas">
+      <button class="btn btn-p btn-lg" onclick="showTab('shop','all')">Explore Collection</button>
+      <button class="btn btn-o btn-lg" onclick="document.getElementById('tsec').scrollIntoView({behavior:'smooth'})">Our Story</button>
+    </div>
+    <div class="hero-stats">
+      <div><div class="snum">15</div><div class="slbl">Curated Pieces</div></div>
+      <div><div class="snum">2,400+</div><div class="slbl">Happy Clients</div></div>
+      <div><div class="snum">100%</div><div class="slbl">Certified</div></div>
+    </div>
+  </div>
+  <div class="hvis">
+    <div class="gpart"></div><div class="gpart"></div><div class="gpart"></div>
+    <div class="hcirc"><img src="https://images.unsplash.com/photo-1611955167811-4711904bb9f8?w=520&h=520&fit=crop&q=85" alt="Fine Diamond Ring" class="hcirc-img"></div>
+    <div class="hfcard tl" style="display:flex;align-items:center;gap:10px"><div><div class="fnum">4.9★</div><div class="flbl">Avg Rating</div></div></div>
+    <div class="hfcard br" style="display:flex;align-items:center;gap:10px"><div><div class="fnum">GIA</div><div class="flbl">Certified</div></div></div>
+  </div>
+</section>
+
+<div class="fstrip" style="margin:0 -32px;padding:30px 32px">
+  <div class="fgrid feat">
+    <div class="fitem"><div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M1 3h15v13H1z" stroke="#c8a96e" stroke-width="1.5" stroke-linejoin="round"/><path d="M16 8h4l3 4v5h-7V8z" stroke="#c8a96e" stroke-width="1.5" stroke-linejoin="round"/><circle cx="5.5" cy="18.5" r="2.5" stroke="#c8a96e" stroke-width="1.5"/><circle cx="18.5" cy="18.5" r="2.5" stroke="#c8a96e" stroke-width="1.5"/></svg></div><div><div class="ftitle">Free Shipping</div><div class="fdesc">Orders above KSh 50,000</div></div></div>
+    <div class="fitem"><div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 6v6c0 5.25 3.75 10.15 9 11.25C17.25 22.15 21 17.25 21 12V6L12 2z" stroke="#c8a96e" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="#c8a96e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="ftitle">Lifetime Warranty</div><div class="fdesc">On all fine jewellery</div></div></div>
+    <div class="fitem"><div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#c8a96e" stroke-width="1.5"/><path d="M8.5 12l2.5 2.5 5-5" stroke="#c8a96e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="ftitle">GIA Certified</div><div class="fdesc">Every gemstone authenticated</div></div></div>
+    <div class="fitem"><div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="5" y="2" width="14" height="20" rx="2" stroke="#c8a96e" stroke-width="1.5"/><path d="M9 7h6M9 11h6M9 15h4" stroke="#c8a96e" stroke-width="1.5" stroke-linecap="round"/><circle cx="16" cy="16" r="4" fill="#100e1a" stroke="#c8a96e" stroke-width="1.3"/><path d="M14.5 16l1 1 2-2" stroke="#c8a96e" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="ftitle">M-Pesa Payments</div><div class="fdesc">Fast, secure, instant</div></div></div>
+  </div>
+</div>
+
+<section class="csec">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between">
+    <div><div class="slabel">Shop By Category</div><h2 class="stitle">Curated Collections</h2><p class="ssub">Three signature jewellery categories, each handpicked for the finest quality.</p></div>
+    <button class="btn btn-o" onclick="showTab('shop','all')">View All →</button>
+  </div>
+  <div class="cgrid">
+    <div class="ccard" onclick="showTab('shop','rings')">
+      <img class="cat-img" src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400&h=530&fit=crop&q=80" alt="Rings">
+      <div class="cov"><div class="clab">Collection</div><div class="cname">Rings</div><div class="ccnt">5 Exclusive Pieces</div></div>
+      <div class="carr">→</div>
+    </div>
+    <div class="ccard" onclick="showTab('shop','necklaces')">
+      <img class="cat-img" src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=530&fit=crop&q=80" alt="Necklaces">
+      <div class="cov"><div class="clab">Collection</div><div class="cname">Necklaces</div><div class="ccnt">5 Exclusive Pieces</div></div>
+      <div class="carr">→</div>
+    </div>
+    <div class="ccard" onclick="showTab('shop','earrings')">
+      <img class="cat-img" src="https://images.unsplash.com/photo-1629224316810-9d8805b95e76?w=400&h=530&fit=crop&q=80" alt="Earrings">
+      <div class="cov"><div class="clab">Collection</div><div class="cname">Earrings</div><div class="ccnt">5 Exclusive Pieces</div></div>
+      <div class="carr">→</div>
+    </div>
+  </div>
+</section>
+
+<div class="gdiv"></div>
+
+<section class="psec">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between">
+    <div><div class="slabel">Handpicked for You</div><h2 class="stitle">Featured Jewellery</h2><p class="ssub">Our most loved pieces — bestsellers, new arrivals, and exclusive finds.</p></div>
+  </div>
+  <div style="display:flex;gap:8px;margin-top:28px;flex-wrap:wrap" id="hftabs">
+    <button class="chip active" onclick="setHF('all',this)">All</button>
+    <button class="chip" onclick="setHF('rings',this)">💍 Rings</button>
+    <button class="chip" onclick="setHF('necklaces',this)">📿 Necklaces</button>
+    <button class="chip" onclick="setHF('earrings',this)">✨ Earrings</button>
+    <button class="chip" onclick="setHF('_best',this)">⭐ Bestsellers</button>
+    <button class="chip" onclick="setHF('_sale',this)">🏷️ On Sale</button>
+  </div>
+  <div class="pgrid" id="hprods"></div>
+</section>
+
+<div class="promo">
+  <div>
+    <div class="ptag">Limited Time Offer</div>
+    <div class="ptit">End of Season Sale<br>Up to 30% Off</div>
+    <p class="pdesc">Exceptional savings on select fine jewellery. Authentic pieces, certified gemstones, unbeatable prices.</p>
+    <div class="cdown" id="cdown">
+      <div class="cdu"><div class="cdn" id="cdh">00</div><div class="cdl">Hours</div></div>
+      <div class="cds">:</div>
+      <div class="cdu"><div class="cdn" id="cdm">00</div><div class="cdl">Mins</div></div>
+      <div class="cds">:</div>
+      <div class="cdu"><div class="cdn" id="cds2">00</div><div class="cdl">Secs</div></div>
+    </div>
+    <button class="btn btn-p btn-lg" style="margin-top:28px" onclick="showTab('shop','_sale')">Shop Sale →</button>
+  </div>
+  <div style="text-align:center;max-width:280px;margin:0 auto;overflow:hidden"><img src="https://images.unsplash.com/photo-1605100804567-1ffe942b5cd6?w=560&h=560&fit=crop&q=80" alt="Fine Jewellery" style="width:100%;filter:drop-shadow(0 0 40px rgba(200,85,110,.3))"></div>
+</div>
+
+<section class="tsec" id="tsec">
+  <!-- HOW IT WORKS -->
+  <div style="margin-bottom:64px">
+    <div class="tc"><div class="slabel">Simple Process</div><h2 class="stitle">How It Works</h2><p class="ssub" style="margin:10px auto 0;text-align:center">Shop confidently in four easy steps — from browse to doorstep.</p></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:40px" id="hiw-grid">
+      <div style="background:var(--d2);padding:28px 20px;text-align:center;border-top:2px solid var(--gold)">
+        <div style="font-size:32px;margin-bottom:12px">🔍</div>
+        <div style="font-family:var(--serif);font-size:16px;color:var(--cream);margin-bottom:8px;font-style:italic">Browse</div>
+        <div style="font-size:11px;color:var(--dim);line-height:1.7;font-weight:300">Explore our curated rings, necklaces, and earrings. Use filters to find your perfect piece.</div>
+      </div>
+      <div style="background:var(--d2);padding:28px 20px;text-align:center;border-top:2px solid var(--rose)">
+        <div style="font-size:32px;margin-bottom:12px">🛒</div>
+        <div style="font-family:var(--serif);font-size:16px;color:var(--cream);margin-bottom:8px;font-style:italic">Add to Cart</div>
+        <div style="font-size:11px;color:var(--dim);line-height:1.7;font-weight:300">Select your size and add to cart. Review your order summary before checking out.</div>
+      </div>
+      <div style="background:var(--d2);padding:28px 20px;text-align:center;border-top:2px solid var(--gold)">
+        <div style="font-size:32px;margin-bottom:12px">📱</div>
+        <div style="font-family:var(--serif);font-size:16px;color:var(--cream);margin-bottom:8px;font-style:italic">Pay Securely</div>
+        <div style="font-size:11px;color:var(--dim);line-height:1.7;font-weight:300">Pay via M-Pesa Paybill, card, or cash on delivery. WhatsApp us your M-Pesa code instantly.</div>
+      </div>
+      <div style="background:var(--d2);padding:28px 20px;text-align:center;border-top:2px solid var(--rose)">
+        <div style="font-size:32px;margin-bottom:12px">📦</div>
+        <div style="font-family:var(--serif);font-size:16px;color:var(--cream);margin-bottom:8px;font-style:italic">Delivered</div>
+        <div style="font-size:11px;color:var(--dim);line-height:1.7;font-weight:300">Your jewellery arrives in our signature gift box, insured and tracked to your door.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tc"><div class="slabel">Customer Stories</div><h2 class="stitle">What Our Clients Say</h2></div>
+  <div class="tgrid">
+    <div class="tcard"><div class="tstars">★★★★★</div><p class="ttxt">"I bought the Diamond Solitaire Ring as an engagement ring and my fiancée was absolutely blown away. The quality is exceptional — exactly as described, with the GIA certificate."</p><div class="tauth"><div class="tav">JM</div><div><div class="tname">James Mwangi</div><div class="tloc">Nairobi, Kenya</div></div><div class="tver">✓ Verified</div></div></div>
+    <div class="tcard"><div class="tstars">★★★★★</div><p class="ttxt">"The Tanzanite necklace is the most stunning piece I own. I've received countless compliments. The M-Pesa payment was instant and the customer service team was incredibly helpful."</p><div class="tauth"><div class="tav">AK</div><div><div class="tname">Amina Kamau</div><div class="tloc">Mombasa, Kenya</div></div><div class="tver">✓ Verified</div></div></div>
+    <div class="tcard"><div class="tstars">★★★★☆</div><p class="ttxt">"Bought the Sapphire Chandelier Earrings for my wife's birthday and she was overjoyed. The packaging was gorgeous and the earrings are even more beautiful in person."</p><div class="tauth"><div class="tav">DK</div><div><div class="tname">David Kipchoge</div><div class="tloc">Kisumu, Kenya</div></div><div class="tver">✓ Verified</div></div></div>
+  </div>
+</section>
+
+<section class="bsec">
+  <div class="btrack">
+    <span class="brand">GIA Certified</span><span style="color:var(--rose);opacity:.3;margin:0 4px">✦</span>
+    <span class="brand">De Beers Alliance</span><span style="color:var(--gold);opacity:.3;margin:0 4px">✦</span>
+    <span class="brand">Fairtrade Gold</span><span style="color:var(--rose);opacity:.3;margin:0 4px">✦</span>
+    <span class="brand">RJC Certified</span><span style="color:var(--gold);opacity:.3;margin:0 4px">✦</span>
+    <span class="brand">IGI Graded</span><span style="color:var(--rose);opacity:.3;margin:0 4px">✦</span>
+    <span class="brand">Kimberley Process</span><span style="color:var(--gold);opacity:.3;margin:0 4px">✦</span>
+    <span class="brand">HRD Antwerp</span><span style="color:var(--rose);opacity:.3;margin:0 4px">✦</span>
+    <span class="brand">GIA Certified</span><span style="color:var(--gold);opacity:.3;margin:0 4px">✦</span>
+    <span class="brand">De Beers Alliance</span><span style="color:var(--rose);opacity:.3;margin:0 4px">✦</span>
+    <span class="brand">Fairtrade Gold</span><span style="color:var(--gold);opacity:.3;margin:0 4px">✦</span>
+    <span class="brand">RJC Certified</span><span style="color:var(--rose);opacity:.3;margin:0 4px">✦</span>
+    <span class="brand">IGI Graded</span><span style="color:var(--gold);opacity:.3;margin:0 4px">✦</span>
+    <span class="brand">Kimberley Process</span><span style="color:var(--rose);opacity:.3;margin:0 4px">✦</span>
+    <span class="brand">HRD Antwerp</span>
+  </div>
+</section>
+
+<section class="nlsec">
+  <div style="margin-bottom:52px">
+    <div class="slabel tc" style="margin-bottom:8px">The LuxeGem World</div>
+    <h2 class="stitle tc" style="font-size:1.6rem;margin-bottom:24px">Worn & Loved</h2>
+    <div class="asgrid">
+      <img src="https://images.unsplash.com/photo-1600721391776-b5cd0e0048f9?w=600&h=360&fit=crop&q=80" alt="Woman wearing gold earrings">
+      <img src="https://images.unsplash.com/photo-1590166223826-12dee1677420?w=600&h=360&fit=crop&q=80" alt="Pearl earring close up">
+      <img src="https://images.unsplash.com/photo-1569397288884-4d43d6738fbd?w=600&h=360&fit=crop&q=80" alt="Gold pendant necklace">
+      <img src="https://images.unsplash.com/photo-1635767798595-a1d2c9deacb4?w=600&h=360&fit=crop&q=80" alt="Diamond gold ring">
+      <img src="https://images.unsplash.com/photo-1611955167811-4711904bb9f8?w=600&h=360&fit=crop&q=80" alt="Fine diamond ring on white">
+    </div>
+  </div>
+  <div class="nlbox">
+    <div class="slabel tc">Join the Inner Circle</div>
+    <h2 class="stitle" style="margin-top:8px">Get Early Access</h2>
+    <p class="ssub" style="margin:12px auto 0">Be the first to discover new arrivals, private sales, and exclusive offers.</p>
+    <div class="nlform"><input class="nlinput" type="email" id="nlemail" placeholder="Your email address"><button class="btn btn-p" onclick="subNL()">Subscribe</button></div>
+  </div>
+</section>
+
+</div>
+</div><!-- end home -->
+
+<!-- SHOP TAB -->
+<div class="ptab" id="tab-shop">
+<div class="container">
+<div class="shpage">
+  <div><div class="slabel" id="shlab">All Collections</div><h2 class="stitle" id="shtit">Fine Jewellery</h2><p class="ssub" id="shsub">Explore our complete handcrafted fine jewellery collection.</p></div>
+  <div class="shfrow" id="shfrow">
+    <button class="chip active" onclick="apSF('all',this)">All</button>
+    <button class="chip" onclick="apSF('rings',this)">💍 Rings</button>
+    <button class="chip" onclick="apSF('necklaces',this)">📿 Necklaces</button>
+    <button class="chip" onclick="apSF('earrings',this)">✨ Earrings</button>
+    <button class="chip" onclick="apSF('_best',this)">⭐ Bestsellers</button>
+    <button class="chip" onclick="apSF('_sale',this)">🏷️ On Sale</button>
+    <select class="ssort" id="ssort" onchange="rendShop()">
+      <option value="">Sort: Featured</option>
+      <option value="pa">Price: Low to High</option>
+      <option value="pd">Price: High to Low</option>
+      <option value="rt">Top Rated</option>
+      <option value="pp">Most Popular</option>
+    </select>
+  </div>
+  <div class="pgrid" id="shprods"></div>
+</div>
+</div>
+</div><!-- end shop -->
+
+<!-- PRODUCT DETAIL TAB -->
+<div class="ptab" id="tab-product">
+<div class="container" style="padding-top:48px;padding-bottom:80px">
+  <button class="btn btn-g btn-sm" style="margin-bottom:24px" onclick="showTab('shop')">← Back to Shop</button>
+  <div class="dlayout" id="dcon"></div>
+  <section class="relsec">
+    <div class="slabel">You May Also Like</div>
+    <h3 class="stitle" style="font-size:1.6rem;margin-top:6px">Related Pieces</h3>
+    <div class="pgrid" id="relprods" style="margin-top:32px"></div>
+  </section>
+</div>
+</div><!-- end product -->
+
+<!-- CHECKOUT TAB -->
+<div class="ptab" id="tab-checkout">
+<div class="container">
+<div style="padding:60px 0" id="comn">
+  <div class="slabel">Secure Purchase</div>
+  <h2 class="stitle" style="margin-bottom:8px">Checkout</h2>
+  <p style="color:var(--dim);font-size:13px;margin-bottom:36px;font-weight:300">All transactions are encrypted and secured. We accept M-Pesa, card, and cash on delivery.</p>
+
+  <!-- MPESA GUIDANCE PANEL -->
+  <div style="background:linear-gradient(135deg,rgba(39,174,96,.08),rgba(39,174,96,.04));border:1px solid rgba(39,174,96,.25);padding:20px 24px;margin-bottom:32px;display:flex;gap:18px;align-items:flex-start">
+    <div style="font-size:28px;flex-shrink:0;margin-top:2px">📱</div>
+    <div>
+      <div style="font-size:12px;font-weight:600;color:#27ae60;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;font-family:var(--sans)">How to Pay via M-Pesa</div>
+      <p style="font-size:12px;color:var(--txt);line-height:1.8;font-weight:300">After placing your order, send payment to <strong style="color:var(--cream)">0712 345 678</strong> (Till No. <strong style="color:var(--cream)">coming soon</strong>) or use our <strong style="color:var(--cream)">Paybill 522533 / Account: LUXEGEM</strong>. Then WhatsApp us the <strong style="color:var(--cream)">M-Pesa confirmation code</strong> to <a href="https://wa.me/254712345678" style="color:#27ae60;text-decoration:underline" target="_blank">+254 712 345 678</a> and your order will be confirmed within minutes.</p>
+    </div>
+  </div>
+
+  <div class="colayout">
+    <div>
+      <div class="cofsec">
+        <div class="cosectit"><span class="stepn">1</span>Contact Information</div>
+        <div class="frow">
+          <div class="fg"><label class="fl">First Name</label><input type="text" class="fi" id="cfn" placeholder="Jane"><div class="ferr" id="cfne"></div></div>
+          <div class="fg"><label class="fl">Last Name</label><input type="text" class="fi" id="cln" placeholder="Wanjiku"></div>
+        </div>
+        <div class="fg"><label class="fl">Email Address</label><input type="email" class="fi" id="cem" placeholder="your@email.com"><div class="ferr" id="ceme"></div></div>
+        <div class="fg"><label class="fl">Phone (M-Pesa)</label><input type="tel" class="fi" id="cph" placeholder="07XX XXX XXX"><div class="ferr" id="cphe"></div></div>
+      </div>
+      <div class="cofsec">
+        <div class="cosectit"><span class="stepn">2</span>Delivery Address</div>
+        <div class="fg"><label class="fl">Street Address</label><input type="text" class="fi" id="cad" placeholder="123 Kimathi Street"></div>
+        <div class="frow">
+          <div class="fg"><label class="fl">City</label><input type="text" class="fi" id="cct" placeholder="Nairobi"></div>
+          <div class="fg"><label class="fl">County</label><input type="text" class="fi" id="cco" placeholder="Nairobi County"></div>
+        </div>
+        <div style="display:flex;gap:12px;margin-top:4px">
+          <div id="sst" class="pmth active" onclick="selShip('standard')" style="flex:1"><div class="pmico">🚚</div><div class="pmnm">Standard</div><div style="font-size:10px;color:var(--grn);margin-top:4px;font-weight:300">Free · 3-5 days</div></div>
+          <div id="sex" class="pmth" onclick="selShip('express')" style="flex:1"><div class="pmico">⚡</div><div class="pmnm">Express</div><div style="font-size:10px;color:var(--gold);margin-top:4px;font-weight:300">KSh 500 · 1-2 days</div></div>
+        </div>
+      </div>
+      <div class="cofsec">
+        <div class="cosectit"><span class="stepn">3</span>Payment Method</div>
+        <div class="pmthds">
+          <div id="pmp" class="pmth active" onclick="selPay('mpesa')"><div class="pmico"><svg width="42" height="28" viewBox="0 0 120 48" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="48" rx="4" fill="#27ae60"/><text x="60" y="20" font-family="Arial,sans-serif" font-size="11" font-weight="900" fill="#fff" text-anchor="middle" letter-spacing="2">M-PESA</text><text x="60" y="36" font-family="Arial,sans-serif" font-size="8" fill="rgba(255,255,255,0.85)" text-anchor="middle" letter-spacing="1">SAFARICOM</text><circle cx="14" cy="24" r="7" fill="rgba(255,255,255,0.2)"/><text x="14" y="28" font-family="Arial,sans-serif" font-size="10" fill="#fff" text-anchor="middle">M</text></svg></div><div class="pmnm">M-Pesa</div></div>
+          <div id="pca" class="pmth" onclick="selPay('card')"><div class="pmico">💳</div><div class="pmnm">Card</div></div>
+          <div id="pca2" class="pmth" onclick="selPay('cash')"><div class="pmico">💵</div><div class="pmnm">Cash</div></div>
+        </div>
+        <div class="payinp show" id="mpinp"><div class="fg"><label class="fl">M-Pesa Phone Number</label><input type="tel" class="fi" id="cmpph" placeholder="07XX XXX XXX"></div></div>
+        <div class="payinp" id="cdinp">
+          <div class="fg"><label class="fl">Card Number</label><input type="text" class="fi" id="cnum" placeholder="1234 5678 9012 3456" oninput="fmtCard(this)"></div>
+          <div class="crowc">
+            <div class="fg"><label class="fl">Cardholder Name</label><input type="text" class="fi" placeholder="Jane Wanjiku"></div>
+            <div class="fg"><label class="fl">Expiry</label><input type="text" class="fi" placeholder="MM/YY"></div>
+            <div class="fg"><label class="fl">CVV</label><input type="text" class="fi" placeholder="123"></div>
+          </div>
+        </div>
+      </div>
+      <div class="promorow"><input type="text" id="promo" placeholder="Promo code (try LUXE10)"><button class="btn btn-o btn-sm" onclick="apPromo()">Apply</button></div>
+      <button class="btn btn-p btn-lg btn-full" style="margin-top:24px" onclick="placeOrder()">Place Order →</button>
+    </div>
+    <div>
+      <div class="osum">
+        <div class="osumtit">Order Summary</div>
+        <div id="coitems"></div>
+        <div class="sumrow"><span class="sumlbl">Subtotal</span><span class="sumval" id="cosub">—</span></div>
+        <div class="sumrow"><span class="sumlbl">Shipping</span><span class="sumval" id="coshp" style="color:var(--grn)">Free</span></div>
+        <div class="sumrow"><span class="sumlbl">VAT (16%)</span><span class="sumval" id="cotax">—</span></div>
+        <div class="sumtot"><span>Total</span><span class="sumtotval" id="cotot">—</span></div>
+        <button class="btn btn-p btn-full" style="margin-top:16px" onclick="placeOrder()">Secure Checkout →</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="cosuccess" id="cosc">
+  <div class="cosuci">✦</div>
+  <div class="cosuctit">Order Confirmed</div>
+  <div class="cosucoid" id="cooid"></div>
+  <p style="color:var(--dim);font-size:13px;margin-bottom:24px;font-weight:300">Thank you for shopping with LuxeGem. Your jewellery will be carefully packaged and dispatched shortly.</p>
+  <button class="btn btn-p" onclick="showTab('home')">Continue Shopping</button>
+</div>
+</div>
+</div><!-- end checkout -->
+
+<!-- AUTH MODAL -->
+<div class="mback" id="amod">
+  <div class="mbox">
+    <button class="mclose" onclick="closeAuth()">✕</button>
+    <div class="mhead"><div class="mttl">Welcome</div></div>
+    <div class="mttab"><span class="mtab active" id="tlb" onclick="swAuth('login')">Sign In</span><span class="mtab" id="trb" onclick="swAuth('register')">Register</span></div>
+    <div id="lgf">
+      <div class="fg"><label class="fl">Email Address</label><input type="email" class="fi" id="lem" placeholder="your@email.com"><div class="ferr" id="leme"></div></div>
+      <div class="fg"><label class="fl">Password</label><input type="password" class="fi" id="lpw" placeholder="••••••••"><div class="ferr" id="lpwe"></div></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px;font-size:11px;color:var(--dim)">
+        <label style="display:flex;align-items:center;gap:6px;cursor:pointer"><input type="checkbox" style="accent-color:var(--gold)"> Remember me</label>
+        <a href="#" style="color:var(--gold)">Forgot password?</a>
+      </div>
+      <button class="btn btn-p btn-full" style="margin-top:22px" onclick="doLogin()">Sign In</button>
+      <div class="slogin"><div class="sloginlbl">Or continue with</div><div class="sbtns"><button class="sbtn" onclick="socLogin('Google')">🟡 Google</button><button class="sbtn" onclick="socLogin('Facebook')">🔵 Facebook</button></div></div>
+    </div>
+    <div id="rgf" style="display:none">
+      <div class="fg"><label class="fl">Full Name</label><input type="text" class="fi" id="rnm" placeholder="Jane Wanjiku"><div class="ferr" id="rnme"></div></div>
+      <div class="fg"><label class="fl">Email Address</label><input type="email" class="fi" id="rem" placeholder="your@email.com"><div class="ferr" id="reme"></div></div>
+      <div class="fg"><label class="fl">Phone (M-Pesa)</label><input type="tel" class="fi" id="rph" placeholder="07XX XXX XXX"><div class="ferr" id="rphe"></div></div>
+      <div class="fg"><label class="fl">Password</label><input type="password" class="fi" id="rpw" placeholder="Min 8 characters"><div class="ferr" id="rpwe"></div></div>
+      <button class="btn btn-p btn-full" style="margin-top:8px" onclick="doReg()">Create Account</button>
+    </div>
+  </div>
+</div>
+
+<!-- CART DRAWER -->
+<div class="covrlay" id="cov" onclick="toggleCart()"></div>
+<div class="cdrawer" id="cdrawer">
+  <div class="chead"><div class="cheadtit">Your Cart</div><button class="cclosebtn" onclick="toggleCart()">✕</button></div>
+  <div class="citems" id="citems"></div>
+  <div class="cftr" id="cftr" style="display:none">
+    <div class="crow"><span>Subtotal</span><span class="crowval" id="csval">—</span></div>
+    <div class="ctotrow"><span class="ctotlbl">Total</span><span class="ctotval" id="ctval">—</span></div>
+    <button class="btn btn-p btn-full" onclick="goCheck()">Checkout →</button>
+  </div>
+</div>
+
+<!-- QUICK VIEW -->
+<div class="qvback" id="qvb" onclick="closeQVbg(event)">
+  <div class="qvbox" id="qvbox">
+    <button class="qvcl" onclick="closeQV()">✕</button>
+    <div id="qvc"></div>
+  </div>
+</div>
+
+<!-- MPESA PAYMENT INSTRUCTIONS -->
+<div id="mpesaOv">
+  <div class="mpbox">
+    <div class="mplogo"><svg width="110" height="44" viewBox="0 0 140 48" xmlns="http://www.w3.org/2000/svg"><rect width="140" height="48" rx="6" fill="#27ae60"/><text x="70" y="19" font-family="Arial Black,Arial,sans-serif" font-size="13" font-weight="900" fill="#fff" text-anchor="middle" letter-spacing="3">M-PESA</text><text x="70" y="35" font-family="Arial,sans-serif" font-size="8.5" fill="rgba(255,255,255,0.8)" text-anchor="middle" letter-spacing="1.5">SAFARICOM</text><circle cx="15" cy="24" r="8" fill="rgba(255,255,255,0.18)"/><text x="15" y="28.5" font-family="Arial Black,sans-serif" font-size="11" fill="#fff" text-anchor="middle">M</text></svg></div>
+    <div class="mptit">Complete Your Payment</div>
+    <div class="mpsub">Order placed — send M-Pesa now</div>
+    <div class="mpamt" id="mpamt">KSh 0</div>
+    <div style="font-size:10px;color:var(--dim);margin-bottom:18px;font-weight:300">Ref: <strong id="mpoid" style="color:var(--gold)"></strong></div>
+    <div style="background:rgba(39,174,96,.08);border:1px solid rgba(39,174,96,.2);padding:16px;text-align:left;margin-bottom:18px;border-radius:4px">
+      <div style="font-size:10px;font-weight:600;color:#27ae60;letter-spacing:.15em;text-transform:uppercase;margin-bottom:10px;font-family:var(--sans)">Send Payment To:</div>
+      <div style="display:flex;flex-direction:column;gap:7px">
+        <div style="font-size:12px;color:var(--txt)">📲 <strong style="color:var(--cream)">Send Money:</strong> 0712 345 678</div>
+        <div style="font-size:12px;color:var(--txt)">🏦 <strong style="color:var(--cream)">Paybill 522533</strong> · Acct: LUXEGEM</div>
+        <div style="font-size:11px;color:var(--dim);margin-top:6px;padding-top:8px;border-top:1px solid rgba(255,255,255,.06);line-height:1.6">Then WhatsApp your code to <a href="https://wa.me/254712345678" style="color:#27ae60" target="_blank">0712 345 678</a> with order ref to confirm.</div>
+      </div>
+    </div>
+    <div class="mpdots" id="mpdots"><div class="mpdot"></div><div class="mpdot"></div><div class="mpdot"></div><div class="mpdot"></div></div>
+    <div style="font-size:11px;color:var(--dim);margin-bottom:20px" id="mpstat">Waiting for confirmation…</div>
+    <div class="mpacts">
+      <button class="mpcnf" onclick="confMP()">✓ I've Paid</button>
+      <button class="mpcnc" onclick="cancMP()">✕ Cancel</button>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+<div class="container">
+  <div class="fgrid-footer">
+    <div>
+      <div style="font-family:var(--serif);font-size:24px;color:var(--cream);font-style:italic;margin-bottom:12px"><em>Luxe</em><span style="background:var(--gp);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:normal">Gem</span></div>
+      <p class="fbdesc">Fine jewellery for the discerning soul. Handcrafted pieces featuring conflict-free gemstones, GIA-certified diamonds, and rare coloured stones.</p>
+      <div style="font-size:11px;color:var(--dim);margin-top:6px;font-weight:300;letter-spacing:.05em">Nairobi, Kenya · Est. 2019</div>
+      <div class="fsocs">
+        <div class="fsoc">IG</div><div class="fsoc">FB</div><div class="fsoc">TW</div><div class="fsoc">WA</div>
+      </div>
+    </div>
+    <div>
+      <div class="fctit">Collections</div>
+      <div class="flinks">
+        <span class="flink" onclick="showTab('shop','rings')">Rings</span>
+        <span class="flink" onclick="showTab('shop','necklaces')">Necklaces</span>
+        <span class="flink" onclick="showTab('shop','earrings')">Earrings</span>
+        <span class="flink" onclick="showTab('shop','_best')">Bestsellers</span>
+        <span class="flink" onclick="showTab('shop','_sale')">Sale</span>
+      </div>
+    </div>
+    <div>
+      <div class="fctit">Help</div>
+      <div class="flinks">
+        <span class="flink">Size Guide</span>
+        <span class="flink">Care & Maintenance</span>
+        <span class="flink">Returns Policy</span>
+        <span class="flink">Certifications</span>
+        <span class="flink">FAQs</span>
+      </div>
+    </div>
+    <div>
+      <div class="fctit">Contact</div>
+      <div class="flinks">
+        <span class="flink">📞 +254 700 000 000</span>
+        <span class="flink">✉ hello@luxegem.co.ke</span>
+        <span class="flink">📍 Westgate, Nairobi</span>
+        <span class="flink">⏰ Mon–Sat 9am–7pm</span>
+      </div>
+    </div>
+  </div>
+  <div class="fbot">
+    <span class="fbotxt">© 2025 LuxeGem Fine Jewellery. All rights reserved.</span>
+    <div class="fpayicos">
+      <div class="fpay">M-PESA</div><div class="fpay">VISA</div><div class="fpay">MC</div>
+    </div>
+  </div>
+</div>
+</footer>
+
+<div id="toast"></div>
+<div id="sov" onclick="closeSdrop()" style="display:none;position:fixed;inset:0;z-index:400"></div>
+
+<!-- AI FAQ FLOATING WIDGET -->
+<button id="ai-faq-bubble" onclick="toggleFAQ()" title="Ask us anything" style="position:relative">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#fff"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+  <span style="position:absolute;top:-3px;right:-3px;width:17px;height:17px;background:var(--gol);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;color:#1a0e2a;font-weight:700;line-height:1">AI</span>
+</button>
+
+<div id="ai-faq-panel">
+  <div class="faq-header">
+    <div class="faq-header-left">
+      <div class="faq-avatar">✦</div>
+      <div><div class="faq-htit">LuxeGem Assistant</div><div class="faq-hsub">Ask me anything</div></div>
+    </div>
+    <button class="faq-hclose" onclick="toggleFAQ()">✕</button>
+  </div>
+  <div class="faq-msgs" id="faq-msgs"></div>
+  <div class="faq-chips" id="faq-chips">
+    <button class="faq-chip" onclick="askFAQ('What materials do you use?')">Materials</button>
+    <button class="faq-chip" onclick="askFAQ('How do I pay with M-Pesa?')">M-Pesa</button>
+    <button class="faq-chip" onclick="askFAQ('Do you offer returns?')">Returns</button>
+    <button class="faq-chip" onclick="askFAQ('Are gemstones certified?')">Certified?</button>
+    <button class="faq-chip" onclick="askFAQ('How long is delivery?')">Delivery</button>
+    <button class="faq-chip" onclick="askFAQ('Do you do custom jewellery?')">Custom</button>
+  </div>
+  <div class="faq-input-row">
+    <input type="text" id="ai-faq-input" placeholder="Ask a question…" onkeydown="if(event.key==='Enter')sendFAQ()">
+    <button id="ai-faq-send" onclick="sendFAQ()">➤</button>
+  </div>
+</div>
+
+<script>
+// ── PRODUCTS: 5 rings, 5 necklaces, 5 earrings ──
+const P = [
+  // RINGS
+  {id:'r001',n:'Ruby Halo Engagement Ring',c:'rings',p:195000,op:220000,r:4.8,rv:189,e:'💍',b:'New',m:'14K Rose Gold',g:'Ruby',ct:'1.2ct',sk:12,d:'A pigeon-blood ruby encircled by a halo of brilliant-cut diamonds. Set in warm rose gold for a romantic, vintage-inspired look.'},
+  {id:'r002',n:'Sapphire Princess Cut Ring',c:'rings',p:175000,op:195000,r:4.7,rv:156,e:'💍',b:null,m:'18K Yellow Gold',g:'Blue Sapphire',ct:'2.0ct',sk:15,d:'A stunning Princess Diana–inspired sapphire ring. A vivid blue Ceylon sapphire set in classic yellow gold.'},
+  {id:'r003',n:'Emerald Three-Stone Ring',c:'rings',p:225000,op:255000,r:4.8,rv:134,e:'💍',b:'Limited',m:'18K White Gold',g:'Colombian Emerald',ct:'1.8ct',sk:5,d:'Three Colombian emeralds symbolizing past, present, and future. Exceptionally vivid green, untreated, with GRS certification.'},
+  {id:'r004',n:'Alexandrite Color-Change Ring',c:'rings',p:320000,op:380000,r:4.9,rv:67,e:'💍',b:'Rare',m:'18K Platinum',g:'Alexandrite',ct:'1.0ct',sk:3,d:'The magical alexandrite shifts from emerald green in daylight to ruby red under candlelight. A true rarity of nature.'},
+  {id:'r005',n:'Morganite Halo Ring',c:'rings',p:115000,op:135000,r:4.7,rv:201,e:'💍',b:'Sale',m:'14K Rose Gold',g:'Morganite',ct:'2.0ct',sk:16,d:'Blush-pink morganite encircled by a halo of white diamonds in rose gold. Feminine, romantic, and breathtaking.'},
+
+  // NECKLACES
+  {id:'n001',n:'Aquamarine Drop Necklace',c:'necklaces',p:145000,op:165000,r:4.7,rv:88,e:'📿',b:null,m:'14K White Gold',g:'Aquamarine',ct:'4.0ct',sk:14,d:'A serene ocean-blue aquamarine drop pendant on a delicate white gold chain. The gemstone of mermaids and dreamers.'},
+  {id:'n002',n:'Sapphire Cluster Necklace',c:'necklaces',p:265000,op:295000,r:4.8,rv:112,e:'📿',b:'Limited',m:'18K White Gold',g:'Ceylon Sapphire',ct:'5.0ct TW',sk:4,d:'A spectacular cluster of Ceylon sapphires arranged in a floral motif. AGL certified, unheated stones.'},
+  {id:'n003',n:'Gold Chain Necklace 22K',c:'necklaces',p:85000,op:null,r:4.8,rv:445,e:'📿',b:'Bestseller',m:'22K Yellow Gold',g:null,ct:null,sk:50,d:'A classic 22-karat yellow gold chain — the foundation of any jewellery collection. Solid, weighty, and investment-worthy.'},
+  {id:'n004',n:'Tanzanite & Diamond Necklace',c:'necklaces',p:395000,op:450000,r:4.9,rv:54,e:'📿',b:'Rare',m:'18K White Gold',g:'Tanzanite',ct:'6.0ct',sk:2,d:'Tanzanite, found only in Tanzania, displays a mesmerizing violet-blue color. This rare pendant is surrounded by brilliant-cut diamonds.'},
+  {id:'n005',n:'Emerald Three-Stone Pendant',c:'necklaces',p:195000,op:220000,r:4.8,rv:145,e:'📿',b:'New',m:'18K Yellow Gold',g:'Zambian Emerald',ct:'2.5ct',sk:10,d:'A vivid Zambian emerald drop pendant on a delicate yellow gold chain. Rich, intense green with excellent clarity.'},
+
+  // EARRINGS
+  {id:'e001',n:'Pearl & Diamond Ear Climbers',c:'earrings',p:115000,op:130000,r:4.7,rv:145,e:'✨',b:'Trending',m:'18K White Gold',g:'Pearl & Diamond',ct:null,sk:12,d:'Contemporary ear climbers featuring South Sea pearls and diamond accents that trail elegantly up the ear.'},
+  {id:'e002',n:'Garnet Teardrop Earrings',c:'earrings',p:78000,op:92000,r:4.5,rv:167,e:'✨',b:'Sale',m:'14K Rose Gold',g:'Mozambique Garnet',ct:'3.0ct TW',sk:20,d:'Deep red Mozambique garnets in teardrop settings of rose gold. Rich color and exceptional brilliance.'},
+  {id:'e003',n:'Sapphire Chandelier Earrings',c:'earrings',p:295000,op:335000,r:4.9,rv:78,e:'✨',b:'New',m:'18K White Gold',g:'Blue Sapphire',ct:'4.5ct TW',sk:6,d:'Cascading sapphire and diamond chandelier earrings. A show-stopping piece for galas and special occasions.'},
+  {id:'e004',n:'Diamond Stud Earrings',c:'earrings',p:215000,op:245000,r:4.9,rv:389,e:'✨',b:'Bestseller',m:'18K White Gold',g:'Diamond',ct:'2.0ct TW',sk:25,d:'Classic four-prong diamond studs — the essential jewellery item every wardrobe needs. GIA certified, H color, VS1 clarity.'},
+  {id:'e005',n:'Amethyst Cocktail Earrings',c:'earrings',p:68000,op:80000,r:4.5,rv:201,e:'✨',b:'Sale',m:'14K Yellow Gold',g:'Amethyst',ct:'3.5ct TW',sk:18,d:'Bold statement earrings featuring vivid deep-violet amethyst stones. Perfect for evening occasions.'},
+];
+
+// PRODUCT IMAGE MAP — all fresh unique Unsplash images, correct category
+const PIMGS = {
+  // RINGS — ring-specific product shots, all different
+  r001:'https://images.unsplash.com/photo-1669859097642-b8dca596fd14?w=600&h=600&fit=crop&q=80',  // red gemstone ring on berries
+  r002:'https://images.unsplash.com/photo-1635767798595-a1d2c9deacb4?w=600&h=600&fit=crop&q=80',  // gold diamonds ring white surface
+  r003:'https://images.unsplash.com/photo-1653190262923-fa971c552377?w=600&h=600&fit=crop&q=80',  // yellow three-stone diamond ring
+  r004:'https://images.unsplash.com/photo-1679156271420-e6c596e9c10a?w=600&h=600&fit=crop&q=80',  // diamond ring on black surface
+  r005:'https://images.unsplash.com/photo-1692593805406-3ee865740c98?w=600&h=600&fit=crop&q=80',  // close-up ring on table
+
+  // NECKLACES — necklace/pendant shots, all different
+  n001:'https://images.unsplash.com/photo-1569397288884-4d43d6738fbd?w=600&h=600&fit=crop&q=80',  // gold pendant necklace
+  n002:'https://images.unsplash.com/photo-1664178266066-e37e0d25e6a1?w=600&h=600&fit=crop&q=80',  // gold & silver necklace
+  n003:'https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=600&h=600&fit=crop&q=80',  // gold beaded necklace
+  n004:'https://images.unsplash.com/photo-1650455221359-3aebf920bcc5?w=600&h=600&fit=crop&q=80',  // silver tray gold jewelry
+  n005:'https://images.unsplash.com/photo-1613843351058-1dd06fda7c02?w=600&h=600&fit=crop&q=80',  // blue stone pendant
+
+  // EARRINGS — earring-only shots, all different
+  e001:'https://images.unsplash.com/photo-1590166223826-12dee1677420?w=600&h=600&fit=crop&q=80',  // pearl earring close-up
+  e002:'https://images.unsplash.com/photo-1693212793204-bcea856c75fe?w=600&h=600&fit=crop&q=80',  // earrings on black cloth
+  e003:'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&h=600&fit=crop&q=80',  // blue gemstone silver earrings
+  e004:'https://images.unsplash.com/photo-1580582183555-3224a02343c8?w=600&h=600&fit=crop&q=80',  // gold diamond ring on finger
+  e005:'https://images.unsplash.com/photo-1605102062083-ae61a51393f3?w=600&h=600&fit=crop&q=80',  // silver diamond ring on book
+};
+
+const fmt=n=>'KSh '+n.toLocaleString('en-KE');
+function stars(r){const f=Math.floor(r);return '★'.repeat(f)+(r%1>=.5?'½':'')+'☆'.repeat(5-f-(r%1>=.5?1:0))}
+function bc(b){return{Bestseller:'bdf',New:'bnw',Sale:'bsl',Rare:'brr',Limited:'blm',Trending:'btr',Exclusive:'bex'}[b]||'bdf'}
+
+// AUTH
+const Auth={SK:'lg_u',
+  getU(){return JSON.parse(localStorage.getItem('lg_users')||'[]')},
+  saveU(u){localStorage.setItem('lg_users',JSON.stringify(u))},
+  reg(n,e,p,ph){const u=this.getU();if(u.find(x=>x.email===e))return{ok:0,err:'Email already registered'};const nu={id:'u'+Date.now(),name:n,email:e,phone:ph,pass:btoa(p),avatar:n[0].toUpperCase()};u.push(nu);this.saveU(u);return this.login(e,p)},
+  login(e,p){const u=this.getU().find(x=>x.email===e&&x.pass===btoa(p));if(!u)return{ok:0,err:'Invalid email or password'};const s={...u};delete s.pass;localStorage.setItem(this.SK,JSON.stringify(s));document.dispatchEvent(new CustomEvent('authCh',{detail:s}));return{ok:1,user:s}},
+  logout(){localStorage.removeItem(this.SK);document.dispatchEvent(new CustomEvent('authCh',{detail:null}))},
+  get(){const d=localStorage.getItem(this.SK);return d?JSON.parse(d):null},
+  in(){return!!this.get()}
+};
+// CART
+const Cart={SK:'lg_c',
+  get(){return JSON.parse(localStorage.getItem(this.SK)||'[]')},
+  save(i){localStorage.setItem(this.SK,JSON.stringify(i));this.badge()},
+  add(pr,q=1){const i=this.get();const ex=i.find(x=>x.id===pr.id);if(ex)ex.qty+=q;else i.push({id:pr.id,name:pr.n,price:pr.p,emoji:pr.e,mat:pr.m||'',qty:q});this.save(i);this.badge()},
+  remove(id){this.save(this.get().filter(i=>i.id!==id))},
+  qty(id,q){const i=this.get();const x=i.find(y=>y.id===id);if(x){if(q<=0)return this.remove(id);x.qty=q;this.save(i)}},
+  clear(){localStorage.removeItem(this.SK);this.badge()},
+  total(){return this.get().reduce((s,i)=>s+i.price*i.qty,0)},
+  count(){return this.get().reduce((s,i)=>s+i.qty,0)},
+  badge(){const c=this.count();document.querySelectorAll('.cart-badge').forEach(el=>{el.textContent=c;el.style.display=c>0?'flex':'none'})}
+};
+const WL={SK:'lg_wl',get(){return JSON.parse(localStorage.getItem(this.SK)||'[]')},add(p){const i=this.get();if(!i.find(x=>x.id===p.id)){i.push(p);localStorage.setItem(this.SK,JSON.stringify(i))}},remove(id){localStorage.setItem(this.SK,JSON.stringify(this.get().filter(x=>x.id!==id)))},has(id){return this.get().some(x=>x.id===id)}};
+
+function mkCard(p,clk){
+  if(!PIMGS[p.id])return'';
+  const d=p.op?Math.round((1-p.p/p.op)*100):0,w=WL.has(p.id),fn=clk||`openQV('${p.id}')`;
+  const imgSrc=PIMGS[p.id];
+  return`<div class="pcard" onclick="${fn}"><div class="pimgw"><img class="pimg-real" src="${imgSrc}" alt="${p.n}" loading="lazy">${p.b?`<span class="pbadge ${bc(p.b)}">${p.b}</span>`:''}<div class="pacts"><button class="pabtn ${w?'wl':''}" onclick="event.stopPropagation();togWL('${p.id}',this)">${w?'♥':'♡'}</button><button class="pabtn" onclick="event.stopPropagation();shrP('${p.id}')">↗</button></div></div><div class="pinfo"><div class="pctag">${p.c}${p.g?' · '+p.g:''}</div><div class="pname">${p.n}</div><div class="pmtrl">${p.m||''}</div><div class="pstars"><span class="stars">${stars(p.r)}</span><span class="rcnt">(${p.rv})</span></div><div class="ppr"><span class="pcurr">${fmt(p.p)}</span>${p.op?`<span class="porig">${fmt(p.op)}</span>`:''} ${d?`<span class="pdisc">${d}% off</span>`:''}</div><button class="btnAC" onclick="event.stopPropagation();addC('${p.id}',this)">Add to Cart</button></div></div>`;
+}
+
+// TAB ROUTING
+function showTab(nm,f){
+  document.querySelectorAll('.ptab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.nlink').forEach(l=>l.classList.remove('active'));
+  const t=document.getElementById('tab-'+nm);if(t)t.classList.add('active');
+  const nl=document.getElementById('nav-'+nm);if(nl)nl.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  if(nm==='shop')rendShopPage(f||'all');
+  else if(nm==='checkout')rendCO();
+  else if(nm==='home')rendHP();
+}
+
+// HOME
+let hf='all';
+function setHF(f,b){hf=f;if(b){document.querySelectorAll('#hftabs .chip').forEach(c=>c.classList.remove('active'));b.classList.add('active')}rendHP()}
+function rendHP(){
+  let pr=[...P];
+  if(hf==='_best')pr=pr.filter(p=>p.b==='Bestseller');
+  else if(hf==='_sale')pr=pr.filter(p=>p.b==='Sale');
+  else if(hf!=='all')pr=pr.filter(p=>p.c===hf);
+  const el=document.getElementById('hprods');if(el)el.innerHTML=pr.map(p=>mkCard(p,`openPD('${p.id}')`)).join('');
+}
+
+// SHOP
+let sf='all';
+function rendShopPage(f){
+  sf=f||'all';
+  document.querySelectorAll('#shfrow .chip').forEach(c=>c.classList.remove('active'));
+  document.querySelectorAll('#shfrow .chip').forEach(c=>{if((c.getAttribute('onclick')||'').includes(`'${sf}'`))c.classList.add('active')});
+  const T={all:'Fine Jewellery',rings:'Rings Collection',necklaces:'Necklaces Collection',earrings:'Earrings Collection',_best:'Bestsellers',_sale:'Sale Items'};
+  const L={all:'All Collections',rings:'Rings',necklaces:'Necklaces',earrings:'Earrings',_best:'Most Loved',_sale:'Limited Time'};
+  document.getElementById('shtit').textContent=T[sf]||'Fine Jewellery';
+  document.getElementById('shlab').textContent=L[sf]||'Collection';
+  rendShop();
+}
+function apSF(f,b){sf=f;document.querySelectorAll('#shfrow .chip').forEach(c=>c.classList.remove('active'));if(b)b.classList.add('active');rendShopPage(f)}
+function rendShop(){
+  let pr=[...P];
+  if(sf==='_best')pr=pr.filter(p=>p.b==='Bestseller');
+  else if(sf==='_sale')pr=pr.filter(p=>p.b==='Sale');
+  else if(sf!=='all')pr=pr.filter(p=>p.c===sf);
+  const s=document.getElementById('ssort')?.value;
+  if(s==='pa')pr.sort((a,b)=>a.p-b.p);else if(s==='pd')pr.sort((a,b)=>b.p-a.p);else if(s==='rt')pr.sort((a,b)=>b.r-a.r);else if(s==='pp')pr.sort((a,b)=>b.rv-a.rv);
+  const el=document.getElementById('shprods');if(el)el.innerHTML=pr.map(p=>mkCard(p,`openPD('${p.id}')`)).join('');
+}
+
+// PRODUCT DETAIL
+let dq=1;
+function openPD(id){
+  const p=P.find(x=>x.id===id);if(!p)return;
+  const d=p.op?Math.round((1-p.p/p.op)*100):0;
+  const imgSrc=PIMGS[p.id]||'https://images.unsplash.com/photo-1605102062083-ae61a51393f3?w=600&h=600&fit=crop&q=80';
+  document.getElementById('dcon').innerHTML=`
+    <div class="dimg-area"><div class="dimg" style="overflow:hidden"><img src="${imgSrc}" alt="${p.n}" style="width:100%;height:100%;object-fit:cover"></div><div class="dthumbs"><div class="dthumb active"><img src="${imgSrc}" alt="${p.n}" style="width:100%;height:100%;object-fit:cover"></div></div></div>
+    <div>${p.b?`<span style="display:inline-block;background:var(--gold);color:var(--blk);padding:4px 12px;font-size:9px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px;font-family:var(--sans)">${p.b}</span>`:''}<div class="dcat">${p.c}${p.g?' · '+p.g:''}</div><h1 class="dname">${p.n}</h1><div style="display:flex;align-items:center;gap:12px;margin-bottom:16px"><span style="color:var(--gold);font-size:15px">${stars(p.r)}</span><span style="font-size:12px;color:var(--dim)">(${p.rv} reviews)</span></div><div class="dprice">${fmt(p.p)}</div>${p.op?`<div style="font-size:13px;color:var(--dim);text-decoration:line-through;margin-bottom:8px">${fmt(p.op)} ${d?`<span style="color:var(--grn);font-weight:600;text-decoration:none">(Save ${d}%)</span>`:''}</div>`:''}<p class="ddesc">${p.d}</p><div class="dspecs">${p.m?`<div class="srow"><span class="slb">Material</span><span class="sv">${p.m}</span></div>`:''} ${p.g?`<div class="srow"><span class="slb">Gemstone</span><span class="sv">${p.g}</span></div>`:''} ${p.ct?`<div class="srow"><span class="slb">Carat Weight</span><span class="sv">${p.ct}</span></div>`:''}<div class="srow"><span class="slb">Rating</span><span class="sv">${p.r}/5.0 ★</span></div><div class="srow"><span class="slb">Availability</span><span class="sv" style="color:var(--grn)">${p.sk>5?'In Stock':'Only '+p.sk+' left'}</span></div><div class="srow"><span class="slb">Certificate</span><span class="sv">GIA / IGI Certified</span></div></div><div class="dqrow"><span style="font-size:12px;color:var(--dim);font-weight:500;letter-spacing:.12em;text-transform:uppercase;font-family:var(--sans)">Quantity</span><div class="qctrl"><button class="qbtn" onclick="chDQ(-1)">−</button><span class="qval" id="dqv">1</span><button class="qbtn" onclick="chDQ(1)">+</button></div></div><div class="dctas"><button class="btn btn-p btn-lg" style="flex:1" onclick="addCD('${p.id}')">Add to Cart</button><button class="btn btn-gold btn-lg" style="flex:1" onclick="addCD('${p.id}');goCheck()">Buy Now</button></div><div class="dtrust"><div class="tritem"><div class="tricon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 6v6c0 5.25 3.75 10.15 9 11.25C17.25 22.15 21 17.25 21 12V6L12 2z" stroke="#c8a96e" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="#c8a96e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="trtxt">Lifetime Warranty</div></div><div class="tritem"><div class="tricon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#c8a96e" stroke-width="1.5"/><path d="M8.5 12l2.5 2.5 5-5" stroke="#c8a96e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="trtxt">GIA Certified</div></div><div class="tritem"><div class="tricon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 12a9 9 0 009 9 9 9 0 009-9 9 9 0 00-9-9" stroke="#c8a96e" stroke-width="1.5" stroke-linecap="round"/><path d="M3 12l3-3M3 12l3 3" stroke="#c8a96e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="trtxt">30-Day Returns</div></div></div></div>
+  `;
+  dq=1;
+  const rel=P.filter(x=>x.c===p.c&&x.id!==p.id).slice(0,4);
+  document.getElementById('relprods').innerHTML=rel.map(x=>mkCard(x,`openPD('${x.id}')`)).join('');
+  showTab('product');
+}
+function chDQ(d){dq=Math.max(1,dq+d);const e=document.getElementById('dqv');if(e)e.textContent=dq}
+function addCD(id){const p=P.find(x=>x.id===id);if(!p)return;Cart.add(p,dq);toast(`${p.n} × ${dq} added`,'success');dq=1;const e=document.getElementById('dqv');if(e)e.textContent=1}
+
+// QUICK VIEW
+function openQV(id){
+  const p=P.find(x=>x.id===id);if(!p)return;
+  const d=p.op?Math.round((1-p.p/p.op)*100):0;
+  const qvImg=PIMGS[p.id]||'https://images.unsplash.com/photo-1605102062083-ae61a51393f3?w=600&h=600&fit=crop&q=80';
+  document.getElementById('qvc').innerHTML=`<div class="qvlayout"><div class="qvimgs"><img src="${qvImg}" alt="${p.n}" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0"></div><div class="qvinfo">${p.b?`<span style="display:inline-block;background:var(--gold);color:var(--blk);padding:3px 10px;font-size:9px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;margin-bottom:10px">${p.b}</span>`:''}<div class="qvcat">${p.c}${p.g?' · '+p.g:''}</div><div class="qvname">${p.n}</div><div style="display:flex;align-items:center;gap:8px;margin-bottom:14px"><span style="color:var(--gold)">${stars(p.r)}</span><span style="font-size:11px;color:var(--dim)">(${p.rv})</span></div><div class="qvprice">${fmt(p.p)}</div>${p.op?`<div class="qvorig">${fmt(p.op)}${d?` — <span style="color:var(--grn);font-weight:600">${d}% off</span>`:''}</div>`:''}<p class="qvdesc">${p.d.substring(0,160)}…</p><div class="qvspecs">${p.m?`<div class="qvsrow"><span class="qvslbl">Material</span><span class="qvsval">${p.m}</span></div>`:''} ${p.g?`<div class="qvsrow"><span class="qvslbl">Gemstone</span><span class="qvsval">${p.g}</span></div>`:''} ${p.ct?`<div class="qvsrow"><span class="qvslbl">Carat</span><span class="qvsval">${p.ct}</span></div>`:''}<div class="qvsrow"><span class="qvslbl">Stock</span><span class="qvsval" style="color:var(--grn)">${p.sk>5?'In Stock':'Only '+p.sk+' left'}</span></div></div><div class="qvctas"><button class="btn btn-p" onclick="addC('${p.id}',null);closeQV()">Add to Cart</button><button class="btn btn-g" onclick="closeQV();openPD('${p.id}')">See Details →</button></div></div></div>`;
+  document.getElementById('qvb').classList.add('show');
+  document.body.style.overflow='hidden';
+}
+function closeQVbg(e){if(e.target===document.getElementById('qvb'))closeQV()}
+function closeQV(){document.getElementById('qvb').classList.remove('show');document.body.style.overflow=''}
+
+// CART
+function addC(id,btn){
+  const p=P.find(x=>x.id===id);if(!p)return;
+  Cart.add(p);
+  if(btn){btn.classList.add('added');btn.textContent='✓ Added';setTimeout(()=>{btn.classList.remove('added');btn.textContent='Add to Cart'},2000)}
+  toast(`${p.n} added to cart`,'success');
+  rendCart();
+}
+function toggleCart(){
+  const d=document.getElementById('cdrawer'),o=document.getElementById('cov'),op=d.classList.contains('open');
+  if(!op)rendCart();
+  d.classList.toggle('open');o.classList.toggle('show');
+  document.body.style.overflow=op?'':'hidden';
+}
+function rendCart(){
+  const it=Cart.get(),b=document.getElementById('citems'),f=document.getElementById('cftr');
+  if(!it.length){b.innerHTML=`<div class="cempty"><div class="cemptyico">🛒</div><div class="cemptytxt">Your cart is empty</div><button class="btn btn-o" style="margin-top:16px" onclick="toggleCart();showTab('shop','all')">Start Shopping</button></div>`;if(f)f.style.display='none';return}
+  let tot=0;
+  b.innerHTML=it.map(i=>{tot+=i.price*i.qty;const cimg=PIMGS[i.id]||'https://images.unsplash.com/photo-1669859097642-b8dca596fd14?w=200&h=200&fit=crop&q=80';return`<div class="citem"><div class="cithumb" style="overflow:hidden"><img src="${cimg}" alt="${i.name}" style="width:100%;height:100%;object-fit:cover"></div><div class="citinfo"><div class="citnm">${i.name}</div><div class="citmeta">${i.mat}</div><div class="citpr">${fmt(i.price)}</div><div class="citqrow"><button class="citqbtn" onclick="updQ('${i.id}',${i.qty-1})">−</button><span class="citqval">${i.qty}</span><button class="citqbtn" onclick="updQ('${i.id}',${i.qty+1})">+</button></div></div><span class="citrm" onclick="rmIt('${i.id}')">✕</span></div>`}).join('');
+  document.getElementById('csval').textContent=fmt(tot);
+  document.getElementById('ctval').textContent=fmt(tot);
+  if(f)f.style.display='block';
+}
+function updQ(id,q){if(q<1){rmIt(id);return}Cart.qty(id,q);rendCart()}
+function rmIt(id){Cart.remove(id);rendCart();toast('Item removed','info')}
+function goCheck(){if(document.getElementById('cdrawer').classList.contains('open'))toggleCart();showTab('checkout')}
+
+// WISHLIST & SHARE
+function togWL(id,b){const p=P.find(x=>x.id===id);if(!p)return;if(WL.has(id)){WL.remove(id);if(b){b.textContent='♡';b.classList.remove('wl')}toast('Removed from wishlist','info')}else{WL.add(p);if(b){b.textContent='♥';b.classList.add('wl')}toast(`${p.n} wishlisted`,'success')}}
+function shrP(id){const p=P.find(x=>x.id===id);if(!p)return;if(navigator.share)navigator.share({title:'LuxeGem — '+p.n,text:p.n+' '+fmt(p.p)});else{navigator.clipboard?.writeText(window.location.href);toast('Link copied!','success')}}
+
+// AUTH
+function openAuth(t='login'){document.getElementById('amod').classList.add('show');swAuth(t);document.body.style.overflow='hidden'}
+function closeAuth(){document.getElementById('amod').classList.remove('show');document.body.style.overflow=''}
+function swAuth(t){
+  document.getElementById('lgf').style.display=t==='login'?'block':'none';
+  document.getElementById('rgf').style.display=t==='register'?'block':'none';
+  document.getElementById('tlb').classList.toggle('active',t==='login');
+  document.getElementById('trb').classList.toggle('active',t==='register');
+}
+function doLogin(){
+  const e=document.getElementById('lem').value.trim(),p=document.getElementById('lpw').value;
+  if(!e){document.getElementById('leme').textContent='Required';return}else document.getElementById('leme').textContent='';
+  if(!p){document.getElementById('lpwe').textContent='Required';return}else document.getElementById('lpwe').textContent='';
+  const r=Auth.login(e,p);
+  if(r.ok){closeAuth();toast(`Welcome back, ${r.user.name.split(' ')[0]}!`,'success');updNav()}
+  else document.getElementById('lpwe').textContent=r.err;
+}
+function doReg(){
+  const n=document.getElementById('rnm').value.trim(),e=document.getElementById('rem').value.trim(),ph=document.getElementById('rph').value.trim(),p=document.getElementById('rpw').value;
+  let ok=1;
+  if(!n){document.getElementById('rnme').textContent='Required';ok=0}else document.getElementById('rnme').textContent='';
+  if(!e.includes('@')){document.getElementById('reme').textContent='Valid email required';ok=0}else document.getElementById('reme').textContent='';
+  if(!ph){document.getElementById('rphe').textContent='Required';ok=0}else document.getElementById('rphe').textContent='';
+  if(p.length<6){document.getElementById('rpwe').textContent='Min 6 characters';ok=0}else document.getElementById('rpwe').textContent='';
+  if(!ok)return;
+  const r=Auth.reg(n,e,p,ph);
+  if(r.ok){closeAuth();toast(`Welcome, ${n.split(' ')[0]}!`,'success');updNav()}
+  else document.getElementById('reme').textContent=r.err;
+}
+function socLogin(pv){Auth.reg(`${pv} User`,`u${Date.now()}@${pv.toLowerCase()}.com`,'social123','0700000000');closeAuth();toast(`Signed in with ${pv}`,'success');updNav()}
+function updNav(){
+  const u=Auth.get();
+  document.querySelector('.nav-ua').style.display=u?'flex':'none';
+  document.querySelector('.nlbtn').style.display=u?'none':'inline-flex';
+  if(u&&document.getElementById('uav'))document.getElementById('uav').textContent=u.avatar||u.name[0];
+}
+
+// CHECKOUT
+let spay='mpesa',sship='standard',shipC=0,promoD=0;
+function selPay(t){spay=t;['mpesa','card','cash'].forEach(x=>document.getElementById('p'+x.slice(0,2))?.classList.toggle('active',x===t));document.getElementById('mpinp').classList.toggle('show',t==='mpesa');document.getElementById('cdinp').classList.toggle('show',t==='card');updCOT()}
+function selShip(t){sship=t;shipC=t==='express'?500:0;['sst','sex'].forEach(x=>document.getElementById(x)?.classList.toggle('active',x===(t==='standard'?'sst':'sex')));const e=document.getElementById('coshp');if(e){e.textContent=shipC?fmt(shipC):'Free';e.style.color=shipC?'var(--cream)':'var(--grn)'}updCOT()}
+function updCOT(){const s=Cart.total()-promoD,tx=Math.round(s*.16),tot=s+shipC+tx;const g=id=>document.getElementById(id);if(g('cosub'))g('cosub').textContent=fmt(Cart.total());if(g('cotax'))g('cotax').textContent=fmt(tx);if(g('cotot'))g('cotot').textContent=fmt(tot)}
+function apPromo(){const c=document.getElementById('promo')?.value.trim().toUpperCase();if(c==='LUXE10'){promoD=Math.round(Cart.total()*.1);toast('Promo applied! 10% off','success');updCOT()}else toast('Invalid promo code','error')}
+function rendCO(){
+  const it=Cart.get(),e=document.getElementById('coitems');
+  if(e){e.innerHTML=it.length?it.map(i=>{const cimg=PIMGS[i.id]||'https://images.unsplash.com/photo-1669859097642-b8dca596fd14?w=200&h=200&fit=crop&q=80';return`<div class="oitem"><div class="oitemico"><img src="${cimg}" alt="${i.name}" style="width:100%;height:100%;object-fit:cover"></div><div><div class="oitemnm">${i.name}</div><div class="oitemmeta">${i.mat} × ${i.qty}</div></div><div class="oitempr">${fmt(i.price*i.qty)}</div></div>`}).join(''):`<p style="color:var(--dim);font-size:12px;padding:12px 0;font-weight:300">Cart is empty. <span style="color:var(--gold);cursor:pointer" onclick="showTab('shop','all')">Shop now</span></p>`}
+  const u=Auth.get();if(u){const g=id=>document.getElementById(id);const pts=(u.name||'').split(' ');if(g('cfn'))g('cfn').value=pts[0]||'';if(g('cln'))g('cln').value=pts.slice(1).join(' ')||'';if(g('cem'))g('cem').value=u.email||'';if(g('cph'))g('cph').value=u.phone||'';if(g('cmpph'))g('cmpph').value=u.phone||''}
+  updCOT();
+  document.getElementById('comn').style.display='';
+  document.getElementById('cosc').style.display='none';
+}
+function fmtCard(el){let v=el.value.replace(/\D/g,'').substring(0,16);el.value=v.replace(/(.{4})/g,'$1 ').trim()}
+function placeOrder(){
+  const g=id=>document.getElementById(id);let ok=1;
+  if(!g('cfn')?.value.trim()){if(g('cfne'))g('cfne').textContent='Required';ok=0}else if(g('cfne'))g('cfne').textContent='';
+  if(!g('cem')?.value.includes('@')){if(g('ceme'))g('ceme').textContent='Valid email required';ok=0}else if(g('ceme'))g('ceme').textContent='';
+  if(!g('cph')?.value.trim()){if(g('cphe'))g('cphe').textContent='Required';ok=0}else if(g('cphe'))g('cphe').textContent='';
+  if(!ok){toast('Please fill required fields','error');return}
+  if(!Cart.get().length){toast('Your cart is empty','error');return}
+  const tot=Cart.total()-promoD+shipC+Math.round((Cart.total()-promoD)*.16);
+  const ph=g('cmpph')?.value||g('cph')?.value||'0712345678';
+  const oid='LG'+Date.now();
+  if(spay==='mpesa'){
+    toast('Initiating M-Pesa payment…','info');
+    setTimeout(()=>{const ov=document.getElementById('mpesaOv');document.getElementById('mpamt').textContent=fmt(tot);document.getElementById('mpoid').textContent=oid;ov.style.display='flex';ov._oid=oid},1200);
+  }else finOrder(oid);
+}
+function finOrder(oid){Cart.clear();Cart.badge();document.getElementById('comn').style.display='none';document.getElementById('cosc').style.display='block';document.getElementById('cooid').textContent='Order #'+oid;window.scrollTo({top:0,behavior:'smooth'})}
+
+// MPESA
+function confMP(){
+  const dots=document.querySelectorAll('.mpdot'),st=document.getElementById('mpstat');let f=0;
+  const iv=setInterval(()=>{if(f<4){dots[f].classList.add('filled');f++}else{clearInterval(iv);st.textContent='Processing…';st.classList.add('mppulse');setTimeout(()=>{const ov=document.getElementById('mpesaOv');const oid=ov._oid||('LG'+Date.now());ov.style.display='none';dots.forEach(d=>d.classList.remove('filled'));st.classList.remove('mppulse');st.textContent='Waiting for PIN…';finOrder(oid);toast('Payment successful! Order confirmed.','success')},1600)}},320);
+}
+function cancMP(){document.querySelectorAll('.mpdot').forEach(d=>d.classList.remove('filled'));document.getElementById('mpesaOv').style.display='none';toast('Payment cancelled','error')}
+
+// SEARCH
+function doSearch(v){const dd=document.getElementById('sdrop'),ov=document.getElementById('sov');if(!v.trim()){dd.style.display='none';ov.style.display='none';return}const r=P.filter(p=>p.n.toLowerCase().includes(v.toLowerCase())||(p.g||'').toLowerCase().includes(v.toLowerCase())||p.c.toLowerCase().includes(v.toLowerCase())).slice(0,6);dd.style.display='block';ov.style.display='block';dd.innerHTML=r.length?r.map(p=>`<div onclick="openPD('${p.id}');closeSdrop()" style="display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--bdr);cursor:pointer" onmouseover="this.style.background='var(--d3)'" onmouseout="this.style.background=''"><div style="font-size:24px">${p.e}</div><div><div style="font-size:12px;color:var(--cream);font-family:var(--serif);font-style:italic">${p.n}</div><div style="font-size:10px;color:var(--dim)">${p.c} · ${fmt(p.p)}</div></div></div>`).join(''):`<div style="padding:16px;color:var(--dim);font-size:12px">No results for "${v}"</div>`}
+function closeSdrop(){document.getElementById('sdrop').style.display='none';document.getElementById('sov').style.display='none'}
+
+// COUNTDOWN
+function updCD(){if(!sessionStorage.getItem('se'))sessionStorage.setItem('se',Date.now()+86400000);const df=parseInt(sessionStorage.getItem('se'))-Date.now();if(df<=0){document.getElementById('cdown').style.display='none';return}document.getElementById('cdh').textContent=String(Math.floor(df/3600000)).padStart(2,'0');document.getElementById('cdm').textContent=String(Math.floor(df%3600000/60000)).padStart(2,'0');document.getElementById('cds2').textContent=String(Math.floor(df%60000/1000)).padStart(2,'0')}
+
+function toggleMob(){const m=document.getElementById('mobnav');m.style.display=m.style.display==='block'?'none':'block'}
+function subNL(){const e=document.getElementById('nlemail')?.value.trim();if(!e||!e.includes('@')){toast('Please enter a valid email','error');return}toast("You're on the list!",'success');document.getElementById('nlemail').value=''}
+
+// TOAST
+function toast(msg,type=''){const c=document.getElementById('toast'),t=document.createElement('div');t.className='titem '+type;t.innerHTML=`<span>${{success:'✓',error:'✕',info:'ℹ'}[type]||'✦'}</span><span>${msg}</span>`;c.appendChild(t);setTimeout(()=>{t.style.animation='tout .3s ease forwards';setTimeout(()=>t.remove(),300)},3200)}
+
+// THEME TOGGLE
+function toggleTheme(){
+  const isLight=document.documentElement.classList.toggle('light');
+  document.getElementById('themeToggle').textContent=isLight?'🌑':'🌙';
+  localStorage.setItem('lg-theme',isLight?'light':'dark');
+}
+(function(){
+  if(localStorage.getItem('lg-theme')==='light'){
+    document.documentElement.classList.add('light');
+    document.addEventListener('DOMContentLoaded',()=>{
+      const t=document.getElementById('themeToggle');
+      if(t)t.textContent='🌑';
+    });
+  }
+})();
+
+// AI FAQ
+const FAQ_KB={
+  'material':['14K and 18K gold (yellow, white, and rose gold), platinum, and sterling silver. All metals are hallmarked and ethically sourced.'],
+  'mpesa':['Go to M-Pesa on your phone → Lipa na M-Pesa → Paybill → Business No: 522533 → Account: LUXEGEM. Or send to 0712 345 678. WhatsApp us the confirmation code instantly!'],
+  'return':['We offer 30-day hassle-free returns. Items must be unworn and in original packaging. Contact us on WhatsApp or email hello@luxegem.co.ke to initiate a return.'],
+  'certif':['Absolutely! Every diamond is GIA-certified and every coloured gemstone comes with an IGI or GIA grading report. Ask us and we\'ll send the certificate PDF.'],
+  'deliver':['Standard delivery is free (3–5 business days across Kenya). Express delivery is KSh 500 and takes 1–2 business days. All orders are tracked and insured.'],
+  'custom':['Yes! We do bespoke and custom jewellery. Share your design idea or reference photo on WhatsApp (+254 712 345 678) and our master jeweller will quote within 24 hours.'],
+  'warranty':['All LuxeGem jewellery comes with a lifetime craftsmanship warranty. We cover any manufacturing defects — bring it in any time for a free inspection and polish.'],
+  'size':['We offer free ring sizing with every ring purchase. Use our printable size guide on the website, or visit our Westgate showroom for a professional fitting.'],
+  'default':['Great question! For the most accurate answer, chat with us on WhatsApp at +254 712 345 678 or email hello@luxegem.co.ke. We reply within minutes during business hours (Mon–Sat, 9am–7pm).']
+};
+
+function getFAQAnswer(q){
+  const ql=q.toLowerCase();
+  if(ql.includes('material')||ql.includes('gold')||ql.includes('metal')||ql.includes('platinum'))return FAQ_KB.material[0];
+  if(ql.includes('mpesa')||ql.includes('m-pesa')||ql.includes('pay')||ql.includes('paybill'))return FAQ_KB.mpesa[0];
+  if(ql.includes('return')||ql.includes('refund')||ql.includes('exchange'))return FAQ_KB.return[0];
+  if(ql.includes('certif')||ql.includes('gia')||ql.includes('authentic')||ql.includes('real'))return FAQ_KB.certif[0];
+  if(ql.includes('deliver')||ql.includes('ship')||ql.includes('long')||ql.includes('days'))return FAQ_KB.deliver[0];
+  if(ql.includes('custom')||ql.includes('bespoke')||ql.includes('design'))return FAQ_KB.custom[0];
+  if(ql.includes('warrant')||ql.includes('guarantee'))return FAQ_KB.warranty[0];
+  if(ql.includes('size')||ql.includes('ring size')||ql.includes('fit'))return FAQ_KB.size[0];
+  return FAQ_KB.default[0];
+}
+
+function toggleFAQ(){
+  const p=document.getElementById('ai-faq-panel');
+  const isOpen=p.classList.toggle('open');
+  if(isOpen&&document.getElementById('faq-msgs').children.length===0){
+    appendFAQMsg('ai','👋 Hi! I\'m the LuxeGem assistant. Ask me anything about our jewellery, delivery, payments, or certificates — or tap a quick question below.');
+  }
+}
+
+function appendFAQMsg(type,text){
+  const msgs=document.getElementById('faq-msgs');
+  const div=document.createElement('div');
+  div.className='faq-msg '+type;
+  div.textContent=text;
+  msgs.appendChild(div);
+  msgs.scrollTop=msgs.scrollHeight;
+  return div;
+}
+
+function askFAQ(q){
+  appendFAQMsg('user',q);
+  document.getElementById('faq-chips').style.display='none';
+  showTyping(q);
+}
+
+function sendFAQ(){
+  const inp=document.getElementById('ai-faq-input');
+  const q=inp.value.trim();
+  if(!q)return;
+  appendFAQMsg('user',q);
+  inp.value='';
+  document.getElementById('faq-chips').style.display='none';
+  showTyping(q);
+}
+
+function showTyping(q){
+  const msgs=document.getElementById('faq-msgs');
+  const typing=document.createElement('div');
+  typing.className='faq-typing';
+  typing.innerHTML='<div class="faq-dot"></div><div class="faq-dot"></div><div class="faq-dot"></div>';
+  msgs.appendChild(typing);
+  msgs.scrollTop=msgs.scrollHeight;
+  setTimeout(()=>{
+    typing.remove();
+    appendFAQMsg('ai',getFAQAnswer(q));
+  },900+Math.random()*400);
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  Cart.badge();updNav();rendHP();updCD();setInterval(updCD,1000);
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeAuth();closeSdrop();closeQV();if(document.getElementById('cdrawer').classList.contains('open'))toggleCart();if(document.getElementById('mobnav').style.display==='block')toggleMob();if(document.getElementById('ai-faq-panel').classList.contains('open'))toggleFAQ()}});
+  document.addEventListener('authCh',updNav);
+});
+</script>
+</body>
+</html>
