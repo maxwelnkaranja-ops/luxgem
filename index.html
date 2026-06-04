@@ -999,28 +999,10 @@ html.light .about-values{background:rgba(156,110,40,.12)!important}
   <h2 class="stitle" style="margin-bottom:8px">Checkout</h2>
   <p style="color:var(--dim);font-size:13px;margin-bottom:36px;font-weight:300">All transactions are encrypted and secured. We accept M-Pesa and cash on delivery.</p>
 
-  <!-- MPESA GUIDANCE PANEL -->
-  <div style="background:linear-gradient(135deg,rgba(39,174,96,.08),rgba(39,174,96,.04));border:1px solid rgba(39,174,96,.25);padding:20px 24px;margin-bottom:32px;display:flex;gap:18px;align-items:flex-start">
-    <div style="font-size:28px;flex-shrink:0;margin-top:2px">📱</div>
-    <div>
-      <div style="font-size:12px;font-weight:600;color:#27ae60;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;font-family:var(--sans)">How to Pay via M-Pesa</div>
-      <p style="font-size:12px;color:var(--txt);line-height:1.8;font-weight:300">After placing your order, send payment to <strong style="color:var(--cream)">0712 345 678</strong> (Till No. <strong style="color:var(--cream)">coming soon</strong>) or use our <strong style="color:var(--cream)">Paybill 522533 / Account: LUXEGEM</strong>. Then WhatsApp us the <strong style="color:var(--cream)">M-Pesa confirmation code</strong> to <a href="https://wa.me/254712345678" style="color:#27ae60;text-decoration:underline" target="_blank">+254 712 345 678</a> and your order will be confirmed within minutes.</p>
-    </div>
-  </div>
-
   <div class="colayout">
     <div>
       <div class="cofsec">
-        <div class="cosectit"><span class="stepn">1</span>Contact Information</div>
-        <div class="frow">
-          <div class="fg"><label class="fl">First Name</label><input type="text" class="fi" id="cfn" placeholder="Jane"><div class="ferr" id="cfne"></div></div>
-          <div class="fg"><label class="fl">Last Name</label><input type="text" class="fi" id="cln" placeholder="Wanjiku"></div>
-        </div>
-        <div class="fg"><label class="fl">Email Address</label><input type="email" class="fi" id="cem" placeholder="your@email.com"><div class="ferr" id="ceme"></div></div>
-        <div class="fg"><label class="fl">Phone (M-Pesa)</label><input type="tel" class="fi" id="cph" placeholder="07XX XXX XXX"><div class="ferr" id="cphe"></div></div>
-      </div>
-      <div class="cofsec">
-        <div class="cosectit"><span class="stepn">2</span>Delivery Address</div>
+        <div class="cosectit"><span class="stepn">1</span>Delivery Address</div>
         <div class="fg"><label class="fl">Street Address</label><input type="text" class="fi" id="cad" placeholder="123 Kimathi Street"></div>
         <div class="frow">
           <div class="fg"><label class="fl">City</label><input type="text" class="fi" id="cct" placeholder="Nairobi"></div>
@@ -1030,6 +1012,10 @@ html.light .about-values{background:rgba(156,110,40,.12)!important}
           <div id="sst" class="pmth active" onclick="selShip('standard')" style="flex:1"><div class="pmico">🚚</div><div class="pmnm">Standard</div><div style="font-size:10px;color:var(--grn);margin-top:4px;font-weight:300">Free · 3-5 days</div></div>
           <div id="sex" class="pmth" onclick="selShip('express')" style="flex:1"><div class="pmico">⚡</div><div class="pmnm">Express</div><div style="font-size:10px;color:var(--gold);margin-top:4px;font-weight:300">KSh 500 · 1-2 days</div></div>
         </div>
+      </div>
+      <div class="cofsec">
+        <div class="cosectit"><span class="stepn">2</span>Delivery Message</div>
+        <div class="fg"><label class="fl">Message / Instructions</label><textarea class="fi" id="cmsg" placeholder="Any special instructions for delivery?" style="height:80px;padding-top:12px;resize:none"></textarea></div>
       </div>
       <div class="cofsec">
         <div class="cosectit"><span class="stepn">3</span>Payment Method</div>
@@ -1457,20 +1443,16 @@ function apPromo(){const c=document.getElementById('promo')?.value.trim().toUppe
 function rendCO(){
   const it=Cart.get(),e=document.getElementById('coitems');
   if(e){e.innerHTML=it.length?it.map(i=>{const cimg=PIMGS[i.id]||'https://images.unsplash.com/photo-1669859097642-b8dca596fd14?w=200&h=200&fit=crop&q=80';return`<div class="oitem"><div class="oitemico"><img src="${cimg}" alt="${i.name}" style="width:100%;height:100%;object-fit:cover"></div><div><div class="oitemnm">${i.name}</div><div class="oitemmeta">${i.mat} × ${i.qty}</div></div><div class="oitempr">${fmt(i.price*i.qty)}</div></div>`}).join(''):`<p style="color:var(--dim);font-size:12px;padding:12px 0;font-weight:300">Cart is empty. <span style="color:var(--gold);cursor:pointer" onclick="showTab('shop','all')">Shop now</span></p>`}
-  const u=Auth.get();if(u){const g=id=>document.getElementById(id);const pts=(u.name||'').split(' ');if(g('cfn'))g('cfn').value=pts[0]||'';if(g('cln'))g('cln').value=pts.slice(1).join(' ')||'';if(g('cem'))g('cem').value=u.email||'';if(g('cph'))g('cph').value=u.phone||'';if(g('cmpph'))g('cmpph').value=u.phone||''}
+  const u=Auth.get();if(u){const g=id=>document.getElementById(id);if(g('cmpph'))g('cmpph').value=u.phone||''}
   updCOT();
   document.getElementById('comn').style.display='';
   document.getElementById('cosc').style.display='none';
 }
 async function placeOrder(){
-  const g=id=>document.getElementById(id);let ok=1;
-  if(!g('cfn')?.value.trim()){if(g('cfne'))g('cfne').textContent='Required';ok=0}else if(g('cfne'))g('cfne').textContent='';
-  if(!g('cem')?.value.includes('@')){if(g('ceme'))g('ceme').textContent='Valid email required';ok=0}else if(g('ceme'))g('ceme').textContent='';
-  if(!g('cph')?.value.trim()){if(g('cphe'))g('cphe').textContent='Required';ok=0}else if(g('cphe'))g('cphe').textContent='';
-  if(!ok){toast('Please fill required fields','error');return}
+  const g=id=>document.getElementById(id);
   if(!Cart.get().length){toast('Your cart is empty','error');return}
   const tot=Cart.total()-promoD+shipC+Math.round((Cart.total()-promoD)*.16);
-  const ph=g('cmpph')?.value||g('cph')?.value||'0712345678';
+  const ph=g('cmpph')?.value||'0712345678';
   const oid='LG'+Date.now();
   if(spay==='mpesa'){
     toast('Initiating M-Pesa payment…','info');
