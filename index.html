@@ -893,7 +893,7 @@ html.light .about-values{background:rgba(156,110,40,.12)!important}
       <div style="background:var(--d2);padding:28px 20px;text-align:center;border-top:2px solid var(--gold)">
         <div style="font-size:32px;margin-bottom:12px">📱</div>
         <div style="font-family:var(--serif);font-size:16px;color:var(--cream);margin-bottom:8px;font-style:italic">Pay Securely</div>
-        <div style="font-size:11px;color:var(--dim);line-height:1.7;font-weight:300">Pay via M-Pesa Paybill, card, or cash on delivery. WhatsApp us your M-Pesa code instantly.</div>
+        <div style="font-size:11px;color:var(--dim);line-height:1.7;font-weight:300">Pay via M-Pesa Paybill or cash on delivery. WhatsApp us your M-Pesa code instantly.</div>
       </div>
       <div style="background:var(--d2);padding:28px 20px;text-align:center;border-top:2px solid var(--rose)">
         <div style="font-size:32px;margin-bottom:12px">📦</div>
@@ -997,7 +997,7 @@ html.light .about-values{background:rgba(156,110,40,.12)!important}
 <div style="padding:60px 0" id="comn">
   <div class="slabel">Secure Purchase</div>
   <h2 class="stitle" style="margin-bottom:8px">Checkout</h2>
-  <p style="color:var(--dim);font-size:13px;margin-bottom:36px;font-weight:300">All transactions are encrypted and secured. We accept M-Pesa, card, and cash on delivery.</p>
+  <p style="color:var(--dim);font-size:13px;margin-bottom:36px;font-weight:300">All transactions are encrypted and secured. We accept M-Pesa and cash on delivery.</p>
 
   <!-- MPESA GUIDANCE PANEL -->
   <div style="background:linear-gradient(135deg,rgba(39,174,96,.08),rgba(39,174,96,.04));border:1px solid rgba(39,174,96,.25);padding:20px 24px;margin-bottom:32px;display:flex;gap:18px;align-items:flex-start">
@@ -1035,18 +1035,9 @@ html.light .about-values{background:rgba(156,110,40,.12)!important}
         <div class="cosectit"><span class="stepn">3</span>Payment Method</div>
         <div class="pmthds">
           <div id="pmp" class="pmth active" onclick="selPay('mpesa')"><div class="pmico"><svg width="42" height="28" viewBox="0 0 120 48" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="48" rx="4" fill="#27ae60"/><text x="60" y="20" font-family="Arial,sans-serif" font-size="11" font-weight="900" fill="#fff" text-anchor="middle" letter-spacing="2">M-PESA</text><text x="60" y="36" font-family="Arial,sans-serif" font-size="8" fill="rgba(255,255,255,0.85)" text-anchor="middle" letter-spacing="1">SAFARICOM</text><circle cx="14" cy="24" r="7" fill="rgba(255,255,255,0.2)"/><text x="14" y="28" font-family="Arial,sans-serif" font-size="10" fill="#fff" text-anchor="middle">M</text></svg></div><div class="pmnm">M-Pesa</div></div>
-          <div id="pca" class="pmth" onclick="selPay('card')"><div class="pmico">💳</div><div class="pmnm">Card</div></div>
           <div id="pca2" class="pmth" onclick="selPay('cash')"><div class="pmico">💵</div><div class="pmnm">Cash</div></div>
         </div>
         <div class="payinp show" id="mpinp"><div class="fg"><label class="fl">M-Pesa Phone Number</label><input type="tel" class="fi" id="cmpph" placeholder="07XX XXX XXX"></div></div>
-        <div class="payinp" id="cdinp">
-          <div class="fg"><label class="fl">Card Number</label><input type="text" class="fi" id="cnum" placeholder="1234 5678 9012 3456" oninput="fmtCard(this)"></div>
-          <div class="crowc">
-            <div class="fg"><label class="fl">Cardholder Name</label><input type="text" class="fi" placeholder="Jane Wanjiku"></div>
-            <div class="fg"><label class="fl">Expiry</label><input type="text" class="fi" placeholder="MM/YY"></div>
-            <div class="fg"><label class="fl">CVV</label><input type="text" class="fi" placeholder="123"></div>
-          </div>
-        </div>
       </div>
       <div class="promorow"><input type="text" id="promo" placeholder="Promo code (try LUXE10)"><button class="btn btn-o btn-sm" onclick="apPromo()">Apply</button></div>
       <button class="btn btn-p btn-lg btn-full" style="margin-top:24px" onclick="placeOrder()">Place Order →</button>
@@ -1459,7 +1450,7 @@ function updNav(){
 
 // CHECKOUT
 let spay='mpesa',sship='standard',shipC=0,promoD=0;
-function selPay(t){spay=t;['mpesa','card','cash'].forEach(x=>document.getElementById('p'+x.slice(0,2))?.classList.toggle('active',x===t));document.getElementById('mpinp').classList.toggle('show',t==='mpesa');document.getElementById('cdinp').classList.toggle('show',t==='card');updCOT()}
+function selPay(t){spay=t;['mpesa','cash'].forEach(x=>document.getElementById(x==='mpesa'?'pmp':'pca2')?.classList.toggle('active',x===t));document.getElementById('mpinp').classList.toggle('show',t==='mpesa');updCOT()}
 function selShip(t){sship=t;shipC=t==='express'?500:0;['sst','sex'].forEach(x=>document.getElementById(x)?.classList.toggle('active',x===(t==='standard'?'sst':'sex')));const e=document.getElementById('coshp');if(e){e.textContent=shipC?fmt(shipC):'Free';e.style.color=shipC?'var(--cream)':'var(--grn)'}updCOT()}
 function updCOT(){const s=Cart.total()-promoD,tx=Math.round(s*.16),tot=s+shipC+tx;const g=id=>document.getElementById(id);if(g('cosub'))g('cosub').textContent=fmt(Cart.total());if(g('cotax'))g('cotax').textContent=fmt(tx);if(g('cotot'))g('cotot').textContent=fmt(tot)}
 function apPromo(){const c=document.getElementById('promo')?.value.trim().toUpperCase();if(c==='LUXE10'){promoD=Math.round(Cart.total()*.1);toast('Promo applied! 10% off','success');updCOT()}else toast('Invalid promo code','error')}
@@ -1471,8 +1462,7 @@ function rendCO(){
   document.getElementById('comn').style.display='';
   document.getElementById('cosc').style.display='none';
 }
-function fmtCard(el){let v=el.value.replace(/\D/g,'').substring(0,16);el.value=v.replace(/(.{4})/g,'$1 ').trim()}
-function placeOrder(){
+async function placeOrder(){
   const g=id=>document.getElementById(id);let ok=1;
   if(!g('cfn')?.value.trim()){if(g('cfne'))g('cfne').textContent='Required';ok=0}else if(g('cfne'))g('cfne').textContent='';
   if(!g('cem')?.value.includes('@')){if(g('ceme'))g('ceme').textContent='Valid email required';ok=0}else if(g('ceme'))g('ceme').textContent='';
@@ -1484,7 +1474,23 @@ function placeOrder(){
   const oid='LG'+Date.now();
   if(spay==='mpesa'){
     toast('Initiating M-Pesa payment…','info');
-    setTimeout(()=>{const ov=document.getElementById('mpesaOv');document.getElementById('mpamt').textContent=fmt(tot);document.getElementById('mpoid').textContent=oid;ov.style.display='flex';ov._oid=oid},1200);
+    try {
+        const result = await initiateSTKPush(ph, tot, oid);
+        if (result.ResponseCode === '0') {
+            const ov=document.getElementById('mpesaOv');
+            document.getElementById('mpamt').textContent=fmt(tot);
+            document.getElementById('mpoid').textContent=oid;
+            ov.style.display='flex';
+            ov._oid=oid;
+            toast('STK Push sent to your phone','success');
+            // We could poll here, but for now we'll let the user confirm
+        } else {
+            toast('Failed to initiate M-Pesa: ' + (result.CustomerMessage || 'Unknown error'), 'error');
+        }
+    } catch (err) {
+        toast('M-Pesa Error: ' + err.message, 'error');
+        console.error(err);
+    }
   }else finOrder(oid);
 }
 function finOrder(oid){Cart.clear();Cart.badge();document.getElementById('comn').style.display='none';document.getElementById('cosc').style.display='block';document.getElementById('cooid').textContent='Order #'+oid;window.scrollTo({top:0,behavior:'smooth'})}
@@ -1603,6 +1609,10 @@ document.addEventListener('DOMContentLoaded',()=>{
   document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeAuth();closeSdrop();closeQV();if(document.getElementById('cdrawer').classList.contains('open'))toggleCart();if(document.getElementById('mobnav').style.display==='block')toggleMob();if(document.getElementById('ai-faq-panel').classList.contains('open'))toggleFAQ()}});
   document.addEventListener('authCh',updNav);
 });
+</script>
+<script type="module">
+  import { initiateSTKPush } from './mpesa.js';
+  window.initiateSTKPush = initiateSTKPush;
 </script>
 </body>
 </html>
